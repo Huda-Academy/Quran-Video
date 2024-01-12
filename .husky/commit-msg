@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+local_branch="$(git rev-parse --abbrev-ref HEAD)"
+
+valid_branch_regex="^(dev|stage|main)$"
+
+if [[ ! $local_branch =~ $valid_branch_regex ]]
+then
+    echo "Not a main branch. Skipping commitlint..."
+    exit 0
+fi
+
+npx commitlint --config commitlint.config.cjs --edit --verbose
