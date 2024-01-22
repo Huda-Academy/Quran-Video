@@ -1147,7 +1147,7 @@ GameObject:
   - component: {fileID: 690452897}
   - component: {fileID: 690452896}
   m_Layer: 5
-  m_Name: Details (1)
+  m_Name: Bottom Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1192,7 +1192,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uFE8D\uFE8D\uFEDF\uFEB8\u064E\uFBFF\u0652\uFEA6\u064F \uFEE3\u064E\uFEA4\u0652\uFEE4\u064F\uFEEE\uFEA9
+  m_text: "\uFE8D\uFEDF\uFEB8\u064E\uFBFF\u0652\uFEA6\u064F \uFEE3\u064E\uFEA4\u0652\uFEE4\u064F\uFEEE\uFEA9
     \uFEA7\u064E\uFEE0\u0650\uFBFF\uFEDE \uFE8D\uFEDF\uFEA4\u064F\uFEBC\u064E\uFEAE\u0650\uFBFC"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 8875591fa1e5957418c74b32da68037e, type: 2}
@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_maskType: 0
   preserveNumbers: 0
   farsi: 1
-  originalText: "\u0627\u0627\u0644\u0634\u064E\u064A\u0652\u062E\u064F \u0645\u064E\u062D\u0652\u0645\u064F\u0648\u062F
+  originalText: "\u0627\u0644\u0634\u064E\u064A\u0652\u062E\u064F \u0645\u064E\u062D\u0652\u0645\u064F\u0648\u062F
     \u062E\u064E\u0644\u0650\u064A\u0644 \u0627\u0644\u062D\u064F\u0635\u064E\u0631\u0650\u064A"
   fixTags: 1
   forceFix: 0
@@ -1686,7 +1686,7 @@ GameObject:
   - component: {fileID: 937723770}
   - component: {fileID: 937723769}
   m_Layer: 5
-  m_Name: Details
+  m_Name: Upper Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
