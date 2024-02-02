@@ -2,16 +2,14 @@
     "version": "0.2",
     "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
     "language": "en",
-    "words": [
-        "Behaviour",
-        "Quran"
-    ],
+    "words": ["Behaviour", "Quran"],
     "flagWords": [],
     "ignorePaths": [
         "package.json",
         "package-lock.json",
         "yarn.lock",
         "node_modules/**",
-        "Library/**"
+        "Library/**",
+        "Assets/Resources/Data/*.json"
     ]
 }
