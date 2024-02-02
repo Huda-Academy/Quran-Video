@@ -1,10 +1,12 @@
-[
-    {
-        "id": "1",
-        "name": "Mahmood Khalil Al-Husary"
-    },
-    {
-        "id": "2",
-        "name": "Mohammad Siddiq Al-Minshawi"
-    }
-]
+{
+    "Qaris": [
+        {
+            "id": "1",
+            "name": "Mahmood Khalil Al-Husary"
+        },
+        {
+            "id": "2",
+            "name": "Mohammad Siddiq Al-Minshawi"
+        }
+    ]
+}

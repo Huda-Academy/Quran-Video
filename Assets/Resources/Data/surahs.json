@@ -1,800 +1,802 @@
-[
-    {
-        "number": 1,
-        "name": "Al-Fatihah",
-        "Juz": 1,
-        "Origin": 1,
-        "Ayah": 7
-    },
-    {
-        "number": 2,
-        "name": "Al-Baqarah",
-        "Juz": 2,
-        "Origin": 2,
-        "Ayah": 286
-    },
-    {
-        "number": 3,
-        "name": "Al-'Imran",
-        "Juz": 3,
-        "Origin": 2,
-        "Ayah": 200
-    },
-    {
-        "number": 4,
-        "name": "An-Nisa'",
-        "Juz": 4,
-        "Origin": 2,
-        "Ayah": 176
-    },
-    {
-        "number": 5,
-        "name": "Al-Ma'idah",
-        "Juz": 6,
-        "Origin": 2,
-        "Ayah": 120
-    },
-    {
-        "number": 6,
-        "name": "Al-An'am",
-        "Juz": 7,
-        "Origin": 1,
-        "Ayah": 165
-    },
-    {
-        "number": 7,
-        "name": "Al-A'raf",
-        "Juz": 8,
-        "Origin": 1,
-        "Ayah": 206
-    },
-    {
-        "number": 8,
-        "name": "Al-Anfal",
-        "Juz": 9,
-        "Origin": 2,
-        "Ayah": 75
-    },
-    {
-        "number": 9,
-        "name": "At-Taubah",
-        "Juz": 10,
-        "Origin": 2,
-        "Ayah": 129
-    },
-    {
-        "number": 10,
-        "name": "Yunus",
-        "Juz": 11,
-        "Origin": 1,
-        "Ayah": 109
-    },
-    {
-        "number": 11,
-        "name": "Hud",
-        "Juz": 11,
-        "Origin": 1,
-        "Ayah": 123
-    },
-    {
-        "number": 12,
-        "name": "Yusuf",
-        "Juz": 12,
-        "Origin": 1,
-        "Ayah": 111
-    },
-    {
-        "number": 13,
-        "name": "Ar-Ra'd",
-        "Juz": 13,
-        "Origin": 2,
-        "Ayah": 43
-    },
-    {
-        "number": 14,
-        "name": "Ibrahim",
-        "Juz": 13,
-        "Origin": 1,
-        "Ayah": 52
-    },
-    {
-        "number": 15,
-        "name": "Al-Hijr",
-        "Juz": 14,
-        "Origin": 1,
-        "Ayah": 99
-    },
-    {
-        "number": 16,
-        "name": "An-Nahl",
-        "Juz": 14,
-        "Origin": 1,
-        "Ayah": 128
-    },
-    {
-        "number": 17,
-        "name": "Al-Isra'",
-        "Juz": 15,
-        "Origin": 1,
-        "Ayah": 111
-    },
-    {
-        "number": 18,
-        "name": "Al-Kahf",
-        "Juz": 16,
-        "Origin": 1,
-        "Ayah": 110
-    },
-    {
-        "number": 19,
-        "name": "Maryam",
-        "Juz": 16,
-        "Origin": 1,
-        "Ayah": 98
-    },
-    {
-        "number": 20,
-        "name": "Ta-Ha",
-        "Juz": 16,
-        "Origin": 1,
-        "Ayah": 135
-    },
-    {
-        "number": 21,
-        "name": "Al-Anbiya'",
-        "Juz": 17,
-        "Origin": 1,
-        "Ayah": 112
-    },
-    {
-        "number": 22,
-        "name": "Al-Hajj",
-        "Juz": 17,
-        "Origin": 2,
-        "Ayah": 78
-    },
-    {
-        "number": 23,
-        "name": "Al-Mu'minun",
-        "Juz": 18,
-        "Origin": 1,
-        "Ayah": 118
-    },
-    {
-        "number": 24,
-        "name": "An-Nur",
-        "Juz": 18,
-        "Origin": 2,
-        "Ayah": 64
-    },
-    {
-        "number": 25,
-        "name": "Al-Furqan",
-        "Juz": 18,
-        "Origin": 1,
-        "Ayah": 77
-    },
-    {
-        "number": 26,
-        "name": "Ash-Shu'ara'",
-        "Juz": 19,
-        "Origin": 1,
-        "Ayah": 227
-    },
-    {
-        "number": 27,
-        "name": "An-Naml",
-        "Juz": 19,
-        "Origin": 1,
-        "Ayah": 93
-    },
-    {
-        "number": 28,
-        "name": "Al-Qasas",
-        "Juz": 20,
-        "Origin": 1,
-        "Ayah": 88
-    },
-    {
-        "number": 29,
-        "name": "Al-'Ankabut",
-        "Juz": 20,
-        "Origin": 1,
-        "Ayah": 69
-    },
-    {
-        "number": 30,
-        "name": "Ar-Rum",
-        "Juz": 21,
-        "Origin": 1,
-        "Ayah": 60
-    },
-    {
-        "number": 31,
-        "name": "Luqman",
-        "Juz": 21,
-        "Origin": 1,
-        "Ayah": 34
-    },
-    {
-        "number": 32,
-        "name": "As-Sajdah",
-        "Juz": 21,
-        "Origin": 1,
-        "Ayah": 30
-    },
-    {
-        "number": 33,
-        "name": "Al-Ahzab",
-        "Juz": 21,
-        "Origin": 2,
-        "Ayah": 73
-    },
-    {
-        "number": 34,
-        "name": "Saba'",
-        "Juz": 22,
-        "Origin": 1,
-        "Ayah": 54
-    },
-    {
-        "number": 35,
-        "name": "Fatir",
-        "Juz": 22,
-        "Origin": 1,
-        "Ayah": 45
-    },
-    {
-        "number": 36,
-        "name": "Ya-Sin",
-        "Juz": 22,
-        "Origin": 1,
-        "Ayah": 83
-    },
-    {
-        "number": 37,
-        "name": "As-Saffat",
-        "Juz": 23,
-        "Origin": 1,
-        "Ayah": 182
-    },
-    {
-        "number": 38,
-        "name": "Sad",
-        "Juz": 23,
-        "Origin": 1,
-        "Ayah": 88
-    },
-    {
-        "number": 39,
-        "name": "Az-Zumar",
-        "Juz": 23,
-        "Origin": 1,
-        "Ayah": 75
-    },
-    {
-        "number": 40,
-        "name": "Ghafir",
-        "Juz": 24,
-        "Origin": 1,
-        "Ayah": 85
-    },
-    {
-        "number": 41,
-        "name": "Fussilat",
-        "Juz": 24,
-        "Origin": 1,
-        "Ayah": 54
-    },
-    {
-        "number": 42,
-        "name": "Ash-Shura",
-        "Juz": 25,
-        "Origin": 1,
-        "Ayah": 53
-    },
-    {
-        "number": 43,
-        "name": "Az-Zukhruf",
-        "Juz": 25,
-        "Origin": 1,
-        "Ayah": 89
-    },
-    {
-        "number": 44,
-        "name": "Ad-Dukhan",
-        "Juz": 25,
-        "Origin": 1,
-        "Ayah": 59
-    },
-    {
-        "number": 45,
-        "name": "Al-Jathiyah",
-        "Juz": 25,
-        "Origin": 1,
-        "Ayah": 37
-    },
-    {
-        "number": 46,
-        "name": "Al-Ahqaf",
-        "Juz": 26,
-        "Origin": 1,
-        "Ayah": 35
-    },
-    {
-        "number": 47,
-        "name": "Muhammad",
-        "Juz": 26,
-        "Origin": 2,
-        "Ayah": 38
-    },
-    {
-        "number": 48,
-        "name": "Al-Fath",
-        "Juz": 26,
-        "Origin": 2,
-        "Ayah": 29
-    },
-    {
-        "number": 49,
-        "name": "Al-Hujurat",
-        "Juz": 26,
-        "Origin": 2,
-        "Ayah": 18
-    },
-    {
-        "number": 50,
-        "name": "Qaf",
-        "Juz": 26,
-        "Origin": 1,
-        "Ayah": 45
-    },
-    {
-        "number": 51,
-        "name": "Adh-Dhariyat",
-        "Juz": 26,
-        "Origin": 1,
-        "Ayah": 60
-    },
-    {
-        "number": 52,
-        "name": "At-Tur",
-        "Juz": 27,
-        "Origin": 1,
-        "Ayah": 49
-    },
-    {
-        "number": 53,
-        "name": "An-Najm",
-        "Juz": 27,
-        "Origin": 1,
-        "Ayah": 62
-    },
-    {
-        "number": 54,
-        "name": "Al-Qamar",
-        "Juz": 27,
-        "Origin": 1,
-        "Ayah": 55
-    },
-    {
-        "number": 55,
-        "name": "Ar-Rahman",
-        "Juz": 27,
-        "Origin": 2,
-        "Ayah": 78
-    },
-    {
-        "number": 56,
-        "name": "Al-Waqi'ah",
-        "Juz": 27,
-        "Origin": 1,
-        "Ayah": 96
-    },
-    {
-        "number": 57,
-        "name": "Al-Hadid",
-        "Juz": 27,
-        "Origin": 2,
-        "Ayah": 29
-    },
-    {
-        "number": 58,
-        "name": "Al-Mujadilah",
-        "Juz": 28,
-        "Origin": 2,
-        "Ayah": 22
-    },
-    {
-        "number": 59,
-        "name": "Al-Hashr",
-        "Juz": 28,
-        "Origin": 2,
-        "Ayah": 24
-    },
-    {
-        "number": 60,
-        "name": "Al-Mumtahanah",
-        "Juz": 28,
-        "Origin": 2,
-        "Ayah": 13
-    },
-    {
-        "number": 61,
-        "name": "As-Saff",
-        "Juz": 28,
-        "Origin": 2,
-        "Ayah": 14
-    },
-    {
-        "number": 62,
-        "name": "Al-Jumu'ah",
-        "Juz": 28,
-        "Origin": 2,
-        "Ayah": 11
-    },
-    {
-        "number": 63,
-        "name": "Al-Munafiqun",
-        "Juz": 28,
-        "Origin": 2,
-        "Ayah": 11
-    },
-    {
-        "number": 64,
-        "name": "At-Taghabun",
-        "Juz": 28,
-        "Origin": 2,
-        "Ayah": 18
-    },
-    {
-        "number": 65,
-        "name": "At-Talaq",
-        "Juz": 28,
-        "Origin": 2,
-        "Ayah": 12
-    },
-    {
-        "number": 66,
-        "name": "At-Tahrim",
-        "Juz": 28,
-        "Origin": 2,
-        "Ayah": 12
-    },
-    {
-        "number": 67,
-        "name": "Al-Mulk",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 30
-    },
-    {
-        "number": 68,
-        "name": "Al-Qalam",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 52
-    },
-    {
-        "number": 69,
-        "name": "Al-Haqqah",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 52
-    },
-    {
-        "number": 70,
-        "name": "Al-Ma'arij",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 44
-    },
-    {
-        "number": 71,
-        "name": "Nuh",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 28
-    },
-    {
-        "number": 72,
-        "name": "Al-Jinn",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 28
-    },
-    {
-        "number": 73,
-        "name": "Al-Muzzammil",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 20
-    },
-    {
-        "number": 74,
-        "name": "Al-Muddaththir",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 56
-    },
-    {
-        "number": 75,
-        "name": "Al-Qiyamah",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 40
-    },
-    {
-        "number": 76,
-        "name": "Al-Insan",
-        "Juz": 29,
-        "Origin": 2,
-        "Ayah": 31
-    },
-    {
-        "number": 77,
-        "name": "Al-Mursalat",
-        "Juz": 29,
-        "Origin": 1,
-        "Ayah": 50
-    },
-    {
-        "number": 78,
-        "name": "An-Naba'",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 40
-    },
-    {
-        "number": 79,
-        "name": "An-Nazi'at",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 46
-    },
-    {
-        "number": 80,
-        "name": "Abasa",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 42
-    },
-    {
-        "number": 81,
-        "name": "At-Takwir",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 29
-    },
-    {
-        "number": 82,
-        "name": "Al-Infitar",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 19
-    },
-    {
-        "number": 83,
-        "name": "Al-Mutaffifin",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 36
-    },
-    {
-        "number": 84,
-        "name": "Al-Inshiqaq",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 25
-    },
-    {
-        "number": 85,
-        "name": "Al-Buruj",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 22
-    },
-    {
-        "number": 86,
-        "name": "At-Tariq",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 17
-    },
-    {
-        "number": 87,
-        "name": "Al-A'la",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 19
-    },
-    {
-        "number": 88,
-        "name": "Al-Ghashiyah",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 26
-    },
-    {
-        "number": 89,
-        "name": "Al-Fajr",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 30
-    },
-    {
-        "number": 90,
-        "name": "Al-Balad",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 20
-    },
-    {
-        "number": 91,
-        "name": "Ash-Shams",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 15
-    },
-    {
-        "number": 92,
-        "name": "Al-Lail",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 21
-    },
-    {
-        "number": 93,
-        "name": "Ad-Duha",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 11
-    },
-    {
-        "number": 94,
-        "name": "Ash-Sharh",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 8
-    },
-    {
-        "number": 95,
-        "name": "At-Tin",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 8
-    },
-    {
-        "number": 96,
-        "name": "Al-'Alaq",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 19
-    },
-    {
-        "number": 97,
-        "name": "Al-Qadr",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 5
-    },
-    {
-        "number": 98,
-        "name": "Al-Bayyinah",
-        "Juz": 30,
-        "Origin": 2,
-        "Ayah": 8
-    },
-    {
-        "number": 99,
-        "name": "Az-Zalzalah",
-        "Juz": 30,
-        "Origin": 2,
-        "Ayah": 8
-    },
-    {
-        "number": 100,
-        "name": "Al-'Adiyat",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 11
-    },
-    {
-        "number": 101,
-        "name": "Al-Qari'ah",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 11
-    },
-    {
-        "number": 102,
-        "name": "At-Takathur",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 8
-    },
-    {
-        "number": 103,
-        "name": "Al-'Asr",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 3
-    },
-    {
-        "number": 104,
-        "name": "Al-Humazah",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 9
-    },
-    {
-        "number": 105,
-        "name": "Al-Fil",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 5
-    },
-    {
-        "number": 106,
-        "name": "Quraish",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 4
-    },
-    {
-        "number": 107,
-        "name": "Al-Ma'un",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 7
-    },
-    {
-        "number": 108,
-        "name": "Al-Kauthar",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 3
-    },
-    {
-        "number": 109,
-        "name": "Al-Kafirun",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 6
-    },
-    {
-        "number": 110,
-        "name": "An-Nasr",
-        "Juz": 30,
-        "Origin": 2,
-        "Ayah": 3
-    },
-    {
-        "number": 111,
-        "name": "Al-Masad",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 5
-    },
-    {
-        "number": 112,
-        "name": "Al-Ikhlas",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 4
-    },
-    {
-        "number": 113,
-        "name": "Al-Falaq",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 5
-    },
-    {
-        "number": 114,
-        "name": "An-Nas",
-        "Juz": 30,
-        "Origin": 1,
-        "Ayah": 6
-    }
-]
+{
+    "Items": [
+        {
+            "Number": 1,
+            "Name": "Al-Fatihah",
+            "Juzz": 1,
+            "Origin": 1,
+            "Ayah": 7
+        },
+        {
+            "Number": 2,
+            "Name": "Al-Baqarah",
+            "Juzz": 2,
+            "Origin": 2,
+            "Ayah": 286
+        },
+        {
+            "Number": 3,
+            "Name": "Al-'Imran",
+            "Juzz": 3,
+            "Origin": 2,
+            "Ayah": 200
+        },
+        {
+            "Number": 4,
+            "Name": "An-Nisa'",
+            "Juzz": 4,
+            "Origin": 2,
+            "Ayah": 176
+        },
+        {
+            "Number": 5,
+            "Name": "Al-Ma'idah",
+            "Juzz": 6,
+            "Origin": 2,
+            "Ayah": 120
+        },
+        {
+            "Number": 6,
+            "Name": "Al-An'am",
+            "Juzz": 7,
+            "Origin": 1,
+            "Ayah": 165
+        },
+        {
+            "Number": 7,
+            "Name": "Al-A'raf",
+            "Juzz": 8,
+            "Origin": 1,
+            "Ayah": 206
+        },
+        {
+            "Number": 8,
+            "Name": "Al-Anfal",
+            "Juzz": 9,
+            "Origin": 2,
+            "Ayah": 75
+        },
+        {
+            "Number": 9,
+            "Name": "At-Taubah",
+            "Juzz": 10,
+            "Origin": 2,
+            "Ayah": 129
+        },
+        {
+            "Number": 10,
+            "Name": "Yunus",
+            "Juzz": 11,
+            "Origin": 1,
+            "Ayah": 109
+        },
+        {
+            "Number": 11,
+            "Name": "Hud",
+            "Juzz": 11,
+            "Origin": 1,
+            "Ayah": 123
+        },
+        {
+            "Number": 12,
+            "Name": "Yusuf",
+            "Juzz": 12,
+            "Origin": 1,
+            "Ayah": 111
+        },
+        {
+            "Number": 13,
+            "Name": "Ar-Ra'd",
+            "Juzz": 13,
+            "Origin": 2,
+            "Ayah": 43
+        },
+        {
+            "Number": 14,
+            "Name": "Ibrahim",
+            "Juzz": 13,
+            "Origin": 1,
+            "Ayah": 52
+        },
+        {
+            "Number": 15,
+            "Name": "Al-Hijr",
+            "Juzz": 14,
+            "Origin": 1,
+            "Ayah": 99
+        },
+        {
+            "Number": 16,
+            "Name": "An-Nahl",
+            "Juzz": 14,
+            "Origin": 1,
+            "Ayah": 128
+        },
+        {
+            "Number": 17,
+            "Name": "Al-Isra'",
+            "Juzz": 15,
+            "Origin": 1,
+            "Ayah": 111
+        },
+        {
+            "Number": 18,
+            "Name": "Al-Kahf",
+            "Juzz": 16,
+            "Origin": 1,
+            "Ayah": 110
+        },
+        {
+            "Number": 19,
+            "Name": "Maryam",
+            "Juzz": 16,
+            "Origin": 1,
+            "Ayah": 98
+        },
+        {
+            "Number": 20,
+            "Name": "Ta-Ha",
+            "Juzz": 16,
+            "Origin": 1,
+            "Ayah": 135
+        },
+        {
+            "Number": 21,
+            "Name": "Al-Anbiya'",
+            "Juzz": 17,
+            "Origin": 1,
+            "Ayah": 112
+        },
+        {
+            "Number": 22,
+            "Name": "Al-Hajj",
+            "Juzz": 17,
+            "Origin": 2,
+            "Ayah": 78
+        },
+        {
+            "Number": 23,
+            "Name": "Al-Mu'minun",
+            "Juzz": 18,
+            "Origin": 1,
+            "Ayah": 118
+        },
+        {
+            "Number": 24,
+            "Name": "An-Nur",
+            "Juzz": 18,
+            "Origin": 2,
+            "Ayah": 64
+        },
+        {
+            "Number": 25,
+            "Name": "Al-Furqan",
+            "Juzz": 18,
+            "Origin": 1,
+            "Ayah": 77
+        },
+        {
+            "Number": 26,
+            "Name": "Ash-Shu'ara'",
+            "Juzz": 19,
+            "Origin": 1,
+            "Ayah": 227
+        },
+        {
+            "Number": 27,
+            "Name": "An-Naml",
+            "Juzz": 19,
+            "Origin": 1,
+            "Ayah": 93
+        },
+        {
+            "Number": 28,
+            "Name": "Al-Qasas",
+            "Juzz": 20,
+            "Origin": 1,
+            "Ayah": 88
+        },
+        {
+            "Number": 29,
+            "Name": "Al-'Ankabut",
+            "Juzz": 20,
+            "Origin": 1,
+            "Ayah": 69
+        },
+        {
+            "Number": 30,
+            "Name": "Ar-Rum",
+            "Juzz": 21,
+            "Origin": 1,
+            "Ayah": 60
+        },
+        {
+            "Number": 31,
+            "Name": "Luqman",
+            "Juzz": 21,
+            "Origin": 1,
+            "Ayah": 34
+        },
+        {
+            "Number": 32,
+            "Name": "As-Sajdah",
+            "Juzz": 21,
+            "Origin": 1,
+            "Ayah": 30
+        },
+        {
+            "Number": 33,
+            "Name": "Al-Ahzab",
+            "Juzz": 21,
+            "Origin": 2,
+            "Ayah": 73
+        },
+        {
+            "Number": 34,
+            "Name": "Saba'",
+            "Juzz": 22,
+            "Origin": 1,
+            "Ayah": 54
+        },
+        {
+            "Number": 35,
+            "Name": "Fatir",
+            "Juzz": 22,
+            "Origin": 1,
+            "Ayah": 45
+        },
+        {
+            "Number": 36,
+            "Name": "Ya-Sin",
+            "Juzz": 22,
+            "Origin": 1,
+            "Ayah": 83
+        },
+        {
+            "Number": 37,
+            "Name": "As-Saffat",
+            "Juzz": 23,
+            "Origin": 1,
+            "Ayah": 182
+        },
+        {
+            "Number": 38,
+            "Name": "Sad",
+            "Juzz": 23,
+            "Origin": 1,
+            "Ayah": 88
+        },
+        {
+            "Number": 39,
+            "Name": "Az-Zumar",
+            "Juzz": 23,
+            "Origin": 1,
+            "Ayah": 75
+        },
+        {
+            "Number": 40,
+            "Name": "Ghafir",
+            "Juzz": 24,
+            "Origin": 1,
+            "Ayah": 85
+        },
+        {
+            "Number": 41,
+            "Name": "Fussilat",
+            "Juzz": 24,
+            "Origin": 1,
+            "Ayah": 54
+        },
+        {
+            "Number": 42,
+            "Name": "Ash-Shura",
+            "Juzz": 25,
+            "Origin": 1,
+            "Ayah": 53
+        },
+        {
+            "Number": 43,
+            "Name": "Az-Zukhruf",
+            "Juzz": 25,
+            "Origin": 1,
+            "Ayah": 89
+        },
+        {
+            "Number": 44,
+            "Name": "Ad-Dukhan",
+            "Juzz": 25,
+            "Origin": 1,
+            "Ayah": 59
+        },
+        {
+            "Number": 45,
+            "Name": "Al-Jathiyah",
+            "Juzz": 25,
+            "Origin": 1,
+            "Ayah": 37
+        },
+        {
+            "Number": 46,
+            "Name": "Al-Ahqaf",
+            "Juzz": 26,
+            "Origin": 1,
+            "Ayah": 35
+        },
+        {
+            "Number": 47,
+            "Name": "Muhammad",
+            "Juzz": 26,
+            "Origin": 2,
+            "Ayah": 38
+        },
+        {
+            "Number": 48,
+            "Name": "Al-Fath",
+            "Juzz": 26,
+            "Origin": 2,
+            "Ayah": 29
+        },
+        {
+            "Number": 49,
+            "Name": "Al-Hujurat",
+            "Juzz": 26,
+            "Origin": 2,
+            "Ayah": 18
+        },
+        {
+            "Number": 50,
+            "Name": "Qaf",
+            "Juzz": 26,
+            "Origin": 1,
+            "Ayah": 45
+        },
+        {
+            "Number": 51,
+            "Name": "Adh-Dhariyat",
+            "Juzz": 26,
+            "Origin": 1,
+            "Ayah": 60
+        },
+        {
+            "Number": 52,
+            "Name": "At-Tur",
+            "Juzz": 27,
+            "Origin": 1,
+            "Ayah": 49
+        },
+        {
+            "Number": 53,
+            "Name": "An-Najm",
+            "Juzz": 27,
+            "Origin": 1,
+            "Ayah": 62
+        },
+        {
+            "Number": 54,
+            "Name": "Al-Qamar",
+            "Juzz": 27,
+            "Origin": 1,
+            "Ayah": 55
+        },
+        {
+            "Number": 55,
+            "Name": "Ar-Rahman",
+            "Juzz": 27,
+            "Origin": 2,
+            "Ayah": 78
+        },
+        {
+            "Number": 56,
+            "Name": "Al-Waqi'ah",
+            "Juzz": 27,
+            "Origin": 1,
+            "Ayah": 96
+        },
+        {
+            "Number": 57,
+            "Name": "Al-Hadid",
+            "Juzz": 27,
+            "Origin": 2,
+            "Ayah": 29
+        },
+        {
+            "Number": 58,
+            "Name": "Al-Mujadilah",
+            "Juzz": 28,
+            "Origin": 2,
+            "Ayah": 22
+        },
+        {
+            "Number": 59,
+            "Name": "Al-Hashr",
+            "Juzz": 28,
+            "Origin": 2,
+            "Ayah": 24
+        },
+        {
+            "Number": 60,
+            "Name": "Al-Mumtahanah",
+            "Juzz": 28,
+            "Origin": 2,
+            "Ayah": 13
+        },
+        {
+            "Number": 61,
+            "Name": "As-Saff",
+            "Juzz": 28,
+            "Origin": 2,
+            "Ayah": 14
+        },
+        {
+            "Number": 62,
+            "Name": "Al-Jumu'ah",
+            "Juzz": 28,
+            "Origin": 2,
+            "Ayah": 11
+        },
+        {
+            "Number": 63,
+            "Name": "Al-Munafiqun",
+            "Juzz": 28,
+            "Origin": 2,
+            "Ayah": 11
+        },
+        {
+            "Number": 64,
+            "Name": "At-Taghabun",
+            "Juzz": 28,
+            "Origin": 2,
+            "Ayah": 18
+        },
+        {
+            "Number": 65,
+            "Name": "At-Talaq",
+            "Juzz": 28,
+            "Origin": 2,
+            "Ayah": 12
+        },
+        {
+            "Number": 66,
+            "Name": "At-Tahrim",
+            "Juzz": 28,
+            "Origin": 2,
+            "Ayah": 12
+        },
+        {
+            "Number": 67,
+            "Name": "Al-Mulk",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 30
+        },
+        {
+            "Number": 68,
+            "Name": "Al-Qalam",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 52
+        },
+        {
+            "Number": 69,
+            "Name": "Al-Haqqah",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 52
+        },
+        {
+            "Number": 70,
+            "Name": "Al-Ma'arij",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 44
+        },
+        {
+            "Number": 71,
+            "Name": "Nuh",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 28
+        },
+        {
+            "Number": 72,
+            "Name": "Al-Jinn",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 28
+        },
+        {
+            "Number": 73,
+            "Name": "Al-Muzzammil",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 20
+        },
+        {
+            "Number": 74,
+            "Name": "Al-Muddaththir",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 56
+        },
+        {
+            "Number": 75,
+            "Name": "Al-Qiyamah",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 40
+        },
+        {
+            "Number": 76,
+            "Name": "Al-Insan",
+            "Juzz": 29,
+            "Origin": 2,
+            "Ayah": 31
+        },
+        {
+            "Number": 77,
+            "Name": "Al-Mursalat",
+            "Juzz": 29,
+            "Origin": 1,
+            "Ayah": 50
+        },
+        {
+            "Number": 78,
+            "Name": "An-Naba'",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 40
+        },
+        {
+            "Number": 79,
+            "Name": "An-Nazi'at",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 46
+        },
+        {
+            "Number": 80,
+            "Name": "Abasa",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 42
+        },
+        {
+            "Number": 81,
+            "Name": "At-Takwir",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 29
+        },
+        {
+            "Number": 82,
+            "Name": "Al-Infitar",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 19
+        },
+        {
+            "Number": 83,
+            "Name": "Al-Mutaffifin",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 36
+        },
+        {
+            "Number": 84,
+            "Name": "Al-Inshiqaq",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 25
+        },
+        {
+            "Number": 85,
+            "Name": "Al-Buruj",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 22
+        },
+        {
+            "Number": 86,
+            "Name": "At-Tariq",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 17
+        },
+        {
+            "Number": 87,
+            "Name": "Al-A'la",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 19
+        },
+        {
+            "Number": 88,
+            "Name": "Al-Ghashiyah",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 26
+        },
+        {
+            "Number": 89,
+            "Name": "Al-Fajr",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 30
+        },
+        {
+            "Number": 90,
+            "Name": "Al-Balad",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 20
+        },
+        {
+            "Number": 91,
+            "Name": "Ash-Shams",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 15
+        },
+        {
+            "Number": 92,
+            "Name": "Al-Lail",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 21
+        },
+        {
+            "Number": 93,
+            "Name": "Ad-Duha",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 11
+        },
+        {
+            "Number": 94,
+            "Name": "Ash-Sharh",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 8
+        },
+        {
+            "Number": 95,
+            "Name": "At-Tin",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 8
+        },
+        {
+            "Number": 96,
+            "Name": "Al-'Alaq",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 19
+        },
+        {
+            "Number": 97,
+            "Name": "Al-Qadr",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 5
+        },
+        {
+            "Number": 98,
+            "Name": "Al-Bayyinah",
+            "Juzz": 30,
+            "Origin": 2,
+            "Ayah": 8
+        },
+        {
+            "Number": 99,
+            "Name": "Az-Zalzalah",
+            "Juzz": 30,
+            "Origin": 2,
+            "Ayah": 8
+        },
+        {
+            "Number": 100,
+            "Name": "Al-'Adiyat",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 11
+        },
+        {
+            "Number": 101,
+            "Name": "Al-Qari'ah",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 11
+        },
+        {
+            "Number": 102,
+            "Name": "At-Takathur",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 8
+        },
+        {
+            "Number": 103,
+            "Name": "Al-'Asr",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 3
+        },
+        {
+            "Number": 104,
+            "Name": "Al-Humazah",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 9
+        },
+        {
+            "Number": 105,
+            "Name": "Al-Fil",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 5
+        },
+        {
+            "Number": 106,
+            "Name": "Quraish",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 4
+        },
+        {
+            "Number": 107,
+            "Name": "Al-Ma'un",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 7
+        },
+        {
+            "Number": 108,
+            "Name": "Al-Kauthar",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 3
+        },
+        {
+            "Number": 109,
+            "Name": "Al-Kafirun",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 6
+        },
+        {
+            "Number": 110,
+            "Name": "An-Nasr",
+            "Juzz": 30,
+            "Origin": 2,
+            "Ayah": 3
+        },
+        {
+            "Number": 111,
+            "Name": "Al-Masad",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 5
+        },
+        {
+            "Number": 112,
+            "Name": "Al-Ikhlas",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 4
+        },
+        {
+            "Number": 113,
+            "Name": "Al-Falaq",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 5
+        },
+        {
+            "Number": 114,
+            "Name": "An-Nas",
+            "Juzz": 30,
+            "Origin": 1,
+            "Ayah": 6
+        }
+    ]
+}
