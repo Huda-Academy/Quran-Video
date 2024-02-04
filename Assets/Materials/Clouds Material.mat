@@ -67,9 +67,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Cloud_Size: 50
+    - _Cloud_Size: 120
     - _Color_Alpha: 1
-    - _Density: 1
+    - _Density: 1.5
     - _EnableExternalAlpha: 0
     - _Noise_Factor: 509.4
     - _QueueControl: 0

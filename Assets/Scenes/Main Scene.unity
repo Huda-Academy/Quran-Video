@@ -502,7 +502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -244.7887, y: -257.9}
+  m_AnchoredPosition: {x: -244.7887, y: -193}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241576312
@@ -1543,8 +1543,8 @@ RectTransform:
   m_Children:
   - {fileID: 1474538085}
   - {fileID: 1585313192}
-  - {fileID: 716815380}
   - {fileID: 241576311}
+  - {fileID: 716815380}
   m_Father: {fileID: 1524768732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2179,7 +2179,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -244.7887, y: -187.7}
+  m_AnchoredPosition: {x: -244.7887, y: -260}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &716815381
@@ -2225,7 +2225,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 716815382}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 36e229958a5ba1146b23521e8e5633a2, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &716815382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2964,7 +2976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  m_ShowMaskGraphic: 0
 --- !u!1 &1062929913
 GameObject:
   m_ObjectHideFlags: 0
@@ -3232,6 +3244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e229958a5ba1146b23521e8e5633a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  surahDropdown: {fileID: 1585313193}
+  qariDropdown: {fileID: 1474538086}
 --- !u!1 &1170361910
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,7 +3334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  m_ShowMaskGraphic: 0
 --- !u!1 &1204328787
 GameObject:
   m_ObjectHideFlags: 0
@@ -3690,7 +3704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ShowMaskGraphic: 1
+  m_ShowMaskGraphic: 0
 --- !u!1 &1451977017
 GameObject:
   m_ObjectHideFlags: 0
@@ -5251,8 +5265,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5637,8 +5651,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

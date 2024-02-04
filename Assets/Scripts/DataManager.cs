@@ -4,9 +4,17 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using SimpleFileBrowser;
+
 
 public class DataManager : MonoBehaviour
 {
+    // SerializeField for the DropDown
+    [SerializeField] private TMP_Dropdown surahDropdown;
+    [SerializeField] private TMP_Dropdown qariDropdown;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,19 +30,22 @@ public class DataManager : MonoBehaviour
         Surah[] surahs = JsonHelper.FromJson<Surah>(surahJson.text);
         Qari[] qaris = JsonHelper.FromJson<Qari>(qariJson.text);
 
+        // Populate the dropdown with the surahs
         foreach (Surah surah in surahs)
         {
-            Debug.Log(surah.number);
-            Debug.Log(surah.name);
-            Debug.Log(surah.juzz);
-            Debug.Log(surah.origin);
-            Debug.Log(surah.ayah);
+            surahDropdown.options.Add(new TMP_Dropdown.OptionData($"{surah.number} - {surah.name}"));
         }
 
         foreach (Qari qari in qaris)
         {
-            Debug.Log(qari.id);
-            Debug.Log(qari.name);
+            qariDropdown.options.Add(new TMP_Dropdown.OptionData(qari.name));
         }
+    }
+
+    public void OpenFileBrowser()
+    {
+        // Open file browser for folder
+        FileBrowser.ShowLoadDialog((path) => { Debug.Log("Selected: " + path); }, null, FileBrowser.PickMode.Folders, false, null, null, "Select Folder", "Select");
+
     }
 }
