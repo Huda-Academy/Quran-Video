@@ -70,6 +70,7 @@ public class DataManager : MonoBehaviour
 
     // TODO
     // Front and Back panels animation
+    // Add Mugawwad or Murattal to Sheikh's name when applicable
     // Create placeholders for the Surah name and three details lines
     // Add Next and Previous Surahs button
     // Play animation when buttons pressed
