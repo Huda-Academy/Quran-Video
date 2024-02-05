@@ -13,6 +13,7 @@ public class DataManager : MonoBehaviour
     // SerializeField for the DropDown
     [SerializeField] private TMP_Dropdown surahDropdown;
     [SerializeField] private TMP_Dropdown qariDropdown;
+    [SerializeField] private TMP_InputField surahsPath;
 
 
     // Start is called before the first frame update
@@ -42,10 +43,42 @@ public class DataManager : MonoBehaviour
         }
     }
 
-    public void OpenFileBrowser()
+    public void LoadSurahs()
     {
-        // Open file browser for folder
-        FileBrowser.ShowLoadDialog((path) => { Debug.Log("Selected: " + path); }, null, FileBrowser.PickMode.Folders, false, null, null, "Select Folder", "Select");
+        string path = surahsPath.text;
 
+        if (string.IsNullOrEmpty(path))
+        {
+            Debug.LogError("Path is empty or null.");
+            return;
+        }
+
+        if (!System.IO.Directory.Exists(path))
+        {
+            Debug.LogError($"Directory does not exist: {path}");
+            return;
+        }
+
+        string[] mp3Files = System.IO.Directory.GetFiles(path, "*.mp3");
+
+        foreach (string file in mp3Files)
+        {
+            string fileName = System.IO.Path.GetFileName(file);
+            Debug.Log(fileName);
+        }
     }
+
+    // TODO
+    // Front and Back panels animation
+    // Create placeholders for the Surah name and three details lines
+    // Add Next and Previous Surahs button
+    // Play animation when buttons pressed
+    // Load the SVGs appropriate in appropriate placeholders
+    // Play the file audio
+    // Add audio visualisation
+    // Add progress bar??
+    // Add timer?
+    // Add main sequence for cinematics
+    // Add save cinematics
+
 }
