@@ -9,7 +9,7 @@ public class Surah
     public string name;
     public int juzz;
     public int origin;
-    public int ayah;
+    public int ayat;
 }
 
 [Serializable]

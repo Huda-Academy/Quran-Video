@@ -2080,7 +2080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: 3f390569bb0cdab419a9696a4415b21f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -363.99994
+      value: -364
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: 3f390569bb0cdab419a9696a4415b21f, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2116,7 +2116,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5567868813287497981, guid: 3f390569bb0cdab419a9696a4415b21f, type: 3}
       propertyPath: m_Name
-      value: 29
+      value: Sample Juzz
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567868813287497981, guid: 3f390569bb0cdab419a9696a4415b21f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2978,7 +2982,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1158710660}
         m_TargetAssemblyTypeName: DataManager, DataAssembly
-        m_MethodName: LoadSurahs
+        m_MethodName: LoadSurahFiles
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4190,6 +4194,9 @@ MonoBehaviour:
   qariDropdown: {fileID: 1474538086}
   surahsPath: {fileID: 241576312}
   surahTitle: {fileID: 921195562}
+  DetailsLine1: {fileID: 979994026}
+  DetailsLine2: {fileID: 1170361910}
+  DetailsLine3: {fileID: 1450043664}
 --- !u!1 &1170361910
 GameObject:
   m_ObjectHideFlags: 0
@@ -4656,7 +4663,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1424187165}
   m_Layer: 0
-  m_Name: Qari
+  m_Name: Qari Portrait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
