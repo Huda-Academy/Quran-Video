@@ -8,7 +8,7 @@ public class Surah
     public int number;
     public string name;
     public int juzz;
-    public int origin;
+    public int revelation;
     public int ayat;
 }
 
@@ -16,5 +16,6 @@ public class Surah
 public class Qari
 {
     public int id;
+    public string fullName;
     public string name;
 }

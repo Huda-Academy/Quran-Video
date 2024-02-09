@@ -29,16 +29,17 @@ public class DataManager : MonoBehaviour
     Qari[] qaris = null;
 
     Surah currentSurah = null;
+    Qari currentQari = null;
 
 
-    private GameObject currentSurahTitle = null;
-    private GameObject currentJuzz = null;
-    private GameObject currentOrigin = null;
-    private GameObject currentAyaDigit1 = null;
-    private GameObject currentAyaDigit2 = null;
-    private GameObject currentAyaDigit3 = null;
-    private GameObject currentAyat = null;
-    private GameObject currentQari = null;
+    private GameObject currentSurahTitleSVG = null;
+    private GameObject currentJuzzSVG = null;
+    private GameObject currentRevelationSVG = null;
+    private GameObject currentAyaDigit1SVG = null;
+    private GameObject currentAyaDigit2SVG = null;
+    private GameObject currentAyaDigit3SVG = null;
+    private GameObject currentAyatSVG = null;
+    private GameObject currentQariSVG = null;
 
     #endregion
 
@@ -57,6 +58,7 @@ public class DataManager : MonoBehaviour
         surahs = JsonHelper.FromJson<Surah>(surahJson.text);
         qaris = JsonHelper.FromJson<Qari>(qariJson.text);
         currentSurah = surahs[0];
+        currentQari = qaris[0];
 
         // Populate the dropdown with the surahs
         foreach (Surah surah in surahs)
@@ -129,11 +131,14 @@ public class DataManager : MonoBehaviour
     {
         currentSurah = surahs[surahDropdown.value];
         Debug.Log($"Surah: {currentSurah.name}");
-        Debug.Log($"Origin: {currentSurah.origin}");
+        Debug.Log($"revelation: {currentSurah.revelation}");
         Debug.Log($"Ayat: {currentSurah.ayat}");
 
         LoadSurahTitle(currentSurah.number);
         LoadJuzz(currentSurah.juzz);
+        LoadRevelation(currentSurah.revelation);
+        LoadAyat(currentSurah.ayat);
+        LoadQari(qaris[qariDropdown.value].name);
     }
 
     private void LoadSurahTitle(int surahNumber)
@@ -150,9 +155,9 @@ public class DataManager : MonoBehaviour
                 return;
             }
 
-            if (currentSurahTitle != null)
+            if (currentSurahTitleSVG != null)
             {
-                Destroy(currentSurahTitle);
+                Destroy(currentSurahTitleSVG);
             }
 
             // Display Surah Title
@@ -169,7 +174,7 @@ public class DataManager : MonoBehaviour
             SVGImage surahImage = surahTitleSVG.GetComponent<SVGImage>();
             surahImage.color = Color.black;
 
-            currentSurahTitle = Instantiate(surahTitleSVG, surahTitle.transform, false);
+            currentSurahTitleSVG = Instantiate(surahTitleSVG, surahTitle.transform, false);
         };
     }
 
@@ -187,9 +192,9 @@ public class DataManager : MonoBehaviour
                 return;
             }
 
-            if (currentJuzz != null)
+            if (currentJuzzSVG != null)
             {
-                Destroy(currentJuzz);
+                Destroy(currentJuzzSVG);
             }
 
             // Display Juzz
@@ -206,19 +211,178 @@ public class DataManager : MonoBehaviour
             SVGImage juzzImage = juzzSVG.GetComponent<SVGImage>();
             juzzImage.color = Color.black;
 
-            currentJuzz = Instantiate(juzzSVG, DetailsLine1.transform, false);
+            currentJuzzSVG = Instantiate(juzzSVG, DetailsLine1.transform, false);
+        };
+    }
+
+    private void LoadRevelation(int revelation)
+    {
+        // Instantiate Prefab from "SVG\Revelation" folder
+        // Load the SVG file based on the revelation
+
+        Dictionary<int, string> revelations = new Dictionary<int, string>
+        {
+            { 1, "Makkeyah" },
+            { 2, "Madaniyah" }
+        };
+
+        Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{revelations[revelation]}.svg").Completed +=
+        (AsyncOperationHandle<GameObject> obj) =>
+        {
+            if (obj.Status != AsyncOperationStatus.Succeeded)
+            {
+                Debug.LogError("Failed to load Revelation SVG");
+                return;
+            }
+
+            if (currentRevelationSVG != null)
+            {
+                Destroy(currentRevelationSVG);
+            }
+
+            // Display Revelation
+            GameObject revelationSVG = obj.Result;
+            RectTransform revelationRectTransform = revelationSVG.GetComponent<RectTransform>();
+            revelationRectTransform.anchorMin = new Vector2(1, 1);
+            revelationRectTransform.anchorMax = new Vector2(1, 1);
+            revelationRectTransform.pivot = new Vector2(0.9f, 0.5f);
+            revelationRectTransform.anchoredPosition = new Vector2(-180, -45);
+            revelationRectTransform.sizeDelta = new Vector2(150, 80);
+            revelationRectTransform.localScale = Vector3.one;
+
+            // Change SVG Image color to black
+            SVGImage revelationImage = revelationSVG.GetComponent<SVGImage>();
+            revelationImage.color = Color.black;
+
+            currentRevelationSVG = Instantiate(revelationSVG, DetailsLine2.transform, false);
+        };
+    }
+
+    private void LoadAyatDigits(int ayat)
+    {
+        // Instantiate Prefab from "SVG\Ayat" folder
+        // Load the SVG file based on the ayat
+
+        Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Ayat/{ayat}.svg").Completed +=
+        (AsyncOperationHandle<GameObject> obj) =>
+        {
+            if (obj.Status != AsyncOperationStatus.Succeeded)
+            {
+                Debug.LogError("Failed to load Ayat SVG");
+                return;
+            }
+
+            if (currentAyatSVG != null)
+            {
+                Destroy(currentAyatSVG);
+            }
+
+            // Display Ayat
+            GameObject ayatSVG = obj.Result;
+            RectTransform ayatRectTransform = ayatSVG.GetComponent<RectTransform>();
+            ayatRectTransform.anchorMin = new Vector2(1, 1);
+            ayatRectTransform.anchorMax = new Vector2(1, 1);
+            ayatRectTransform.pivot = new Vector2(0.9f, 0.5f);
+            ayatRectTransform.anchoredPosition = new Vector2(-180, -45);
+            ayatRectTransform.sizeDelta = new Vector2(150, 80);
+            ayatRectTransform.localScale = Vector3.one;
+
+            // Change SVG Image color to black
+            SVGImage ayatImage = ayatSVG.GetComponent<SVGImage>();
+            ayatImage.color = Color.black;
+
+            currentAyatSVG = Instantiate(ayatSVG, DetailsLine2.transform, false);
+        };
+    }
+
+    private void LoadAyat(int ayat)
+    {
+        string ayatWord = null;
+
+        // The mionimum number of Ayat in a Surah is 3
+        if (ayat > 2 && ayat < 11)
+            ayatWord = "Ayat";
+        else
+            ayatWord = "Aya";
+
+        Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{ayatWord}.svg").Completed +=
+        (AsyncOperationHandle<GameObject> obj) =>
+        {
+            if (obj.Status != AsyncOperationStatus.Succeeded)
+            {
+                Debug.LogError("Failed to load Ayat SVG");
+                return;
+            }
+
+            if (currentAyatSVG != null)
+            {
+                Destroy(currentAyatSVG);
+            }
+
+            // Display Ayat
+            GameObject ayatSVG = obj.Result;
+            RectTransform ayatRectTransform = ayatSVG.GetComponent<RectTransform>();
+            ayatRectTransform.anchorMin = new Vector2(1, 1);
+            ayatRectTransform.anchorMax = new Vector2(1, 1);
+            ayatRectTransform.pivot = new Vector2(0.8f, 0.5f);
+            ayatRectTransform.anchoredPosition = new Vector2(-505, -50);
+            ayatRectTransform.sizeDelta = new Vector2(100, 80);
+            ayatRectTransform.localScale = Vector3.one;
+
+            // Change SVG Image color to black
+            SVGImage ayatImage = ayatSVG.GetComponent<SVGImage>();
+            ayatImage.color = Color.black;
+
+            currentAyatSVG = Instantiate(ayatSVG, DetailsLine2.transform, false);
+        };
+    }
+
+    private void LoadQari(string qariName)
+    {
+        // Instantiate Prefab from "SVG\Qari" folder
+        // Load the SVG file based on the qariId
+
+        Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Qaris/{qariName}.svg").Completed +=
+        (AsyncOperationHandle<GameObject> obj) =>
+        {
+            if (obj.Status != AsyncOperationStatus.Succeeded)
+            {
+                Debug.LogError("Failed to load Qari SVG");
+                return;
+            }
+
+            if (currentQariSVG != null)
+            {
+                Destroy(currentQariSVG);
+            }
+
+            // Display Qari
+            GameObject qariSVG = obj.Result;
+            RectTransform qariRectTransform = qariSVG.GetComponent<RectTransform>();
+            qariRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
+            qariRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            qariRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            qariRectTransform.anchoredPosition = new Vector2(0, 0);
+            qariRectTransform.sizeDelta = new Vector2(728, 80);
+            qariRectTransform.localScale = Vector3.one;
+
+            // Change SVG Image color to black
+            SVGImage qariImage = qariSVG.GetComponent<SVGImage>();
+            qariImage.color = Color.black;
+
+            currentQariSVG = Instantiate(qariSVG, DetailsLine3.transform, false);
         };
     }
 
     // TODO
-    // Front and Back panels animation
-    // Create placeholders for the Surah name and three details lines
-    // Play animation when buttons pressed
     // Load the SVGs appropriate in appropriate placeholders
-    // Play the file audio
+    // Play the audio file
+
+    // Play animation when buttons pressed
+    // Front and Back panels animation
     // Add audio visualisation
-    // Add progress bar??
     // Add timer?
+    // Add progress bar??
     // Add main sequence for cinematics
     // Add save cinematics
 

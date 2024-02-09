@@ -2,11 +2,13 @@
     "items": [
         {
             "id": "1",
-            "name": "Mahmood Khalil Al-Husary"
+            "fullName": "Mahmood Khalil Al-Husary",
+            "name": "Husary"
         },
         {
             "id": "2",
-            "name": "Mohammad Siddiq Al-Minshawi"
+            "fullName": "Mohammad Siddiq Al-Minshawi",
+            "name": "Minshawi"
         }
     ]
 }

@@ -350,7 +350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: d0461dd514e02fe4290990cdf4a78839, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -179
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: d0461dd514e02fe4290990cdf4a78839, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -371,10 +371,14 @@ PrefabInstance:
     - target: {fileID: -2304375700400688866, guid: d0461dd514e02fe4290990cdf4a78839, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 3286163911610860551, guid: 60b1b52f04c3084498f9f851c1ec5f90, type: 3}
+      objectReference: {fileID: 3286163911610860551, guid: d0461dd514e02fe4290990cdf4a78839, type: 3}
     - target: {fileID: 5567868813287497981, guid: d0461dd514e02fe4290990cdf4a78839, type: 3}
       propertyPath: m_Name
-      value: Makkeyah
+      value: ' Sample Revelation'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567868813287497981, guid: d0461dd514e02fe4290990cdf4a78839, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -707,7 +711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 90
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -739,7 +743,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000061035156
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -760,6 +764,10 @@ PrefabInstance:
     - target: {fileID: 5567868813287497981, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
       propertyPath: m_Name
       value: Husary
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567868813287497981, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1014,7 +1022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: 2337217c0db351f4d950e042a8487a0c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -344
+      value: -345
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: 2337217c0db351f4d950e042a8487a0c, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4561,7 +4569,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8524424544509167813, guid: b239d94a689de7749bf280d3bd58f724, type: 3}
       propertyPath: m_Pivot.x
-      value: 0.5
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: b239d94a689de7749bf280d3bd58f724, type: 3}
       propertyPath: m_Pivot.y
@@ -4621,7 +4629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: b239d94a689de7749bf280d3bd58f724, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -534.89996
+      value: -505
       objectReference: {fileID: 0}
     - target: {fileID: -8524424544509167813, guid: b239d94a689de7749bf280d3bd58f724, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4642,6 +4650,10 @@ PrefabInstance:
     - target: {fileID: 5567868813287497981, guid: b239d94a689de7749bf280d3bd58f724, type: 3}
       propertyPath: m_Name
       value: Aya
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567868813287497981, guid: b239d94a689de7749bf280d3bd58f724, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
