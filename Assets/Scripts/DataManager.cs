@@ -31,15 +31,14 @@ public class DataManager : MonoBehaviour
     Surah currentSurah = null;
     Qari currentQari = null;
 
-
     private GameObject currentSurahTitleSVG = null;
     private GameObject currentJuzzSVG = null;
     private GameObject currentRevelationSVG = null;
-    private GameObject currentAyaDigit1SVG = null;
-    private GameObject currentAyaDigit2SVG = null;
-    private GameObject currentAyaDigit3SVG = null;
+    private List<GameObject> currentAyaDigitSVGs = new List<GameObject>();
     private GameObject currentAyatSVG = null;
     private GameObject currentQariSVG = null;
+
+    private int currentLine2X = 0;
 
     #endregion
 
@@ -127,7 +126,7 @@ public class DataManager : MonoBehaviour
         LoadSurahDetails();
     }
 
-    private void LoadSurahDetails()
+    public void LoadSurahDetails()
     {
         currentSurah = surahs[surahDropdown.value];
 
@@ -135,7 +134,7 @@ public class DataManager : MonoBehaviour
         LoadJuzz(currentSurah.juzz);
         LoadRevelation(currentSurah.revelation);
         LoadAyatDigits(currentSurah.ayat);
-        LoadAyat(currentSurah.ayat);
+        // LoadAyat(currentSurah.ayat);
         LoadQari(qaris[qariDropdown.value].name);
     }
 
@@ -224,6 +223,16 @@ public class DataManager : MonoBehaviour
             { 2, "Madaniyah" }
         };
 
+        // Width
+        // Makkeyah = 100
+        // Madaniyah = 110
+
+        Dictionary<int, int> revelationWidths = new Dictionary<int, int>
+        {
+            { 1, 100 },
+            { 2, 110 }
+        };
+
         Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{revelations[revelation]}.svg").Completed +=
         (AsyncOperationHandle<GameObject> obj) =>
         {
@@ -243,16 +252,32 @@ public class DataManager : MonoBehaviour
             RectTransform revelationRectTransform = revelationSVG.GetComponent<RectTransform>();
             revelationRectTransform.anchorMin = new Vector2(1, 1);
             revelationRectTransform.anchorMax = new Vector2(1, 1);
-            revelationRectTransform.pivot = new Vector2(0.9f, 0.5f);
-            revelationRectTransform.anchoredPosition = new Vector2(-180, -45);
-            revelationRectTransform.sizeDelta = new Vector2(150, 80);
+            revelationRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            revelationRectTransform.anchoredPosition = new Vector2(-5 - revelationWidths[revelation] / 2, -45);
+            revelationRectTransform.sizeDelta = new Vector2(revelationWidths[revelation], 80);
             revelationRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
             SVGImage revelationImage = revelationSVG.GetComponent<SVGImage>();
             revelationImage.color = Color.black;
 
+            // Find object with name "Dash"
+            GameObject dashObject = GameObject.Find("Dash");
+
+            if (dashObject != null)
+            {
+                RectTransform dashRectTransform = dashObject.GetComponent<RectTransform>();
+                dashRectTransform.anchoredPosition = new Vector2(-35 - revelationWidths[revelation], -45);
+            }
+            else
+            {
+                Debug.LogError("Dash object not found");
+            }
+
             currentRevelationSVG = Instantiate(revelationSVG, DetailsLine2.transform, false);
+
+            //Dash width is 60
+            currentLine2X += revelationWidths[revelation] + 60;
         };
     }
 
@@ -265,38 +290,29 @@ public class DataManager : MonoBehaviour
 
         // Destroy all digit objects regardless of the length of the ayat numbers
 
-        if (currentAyaDigit1SVG != null)
-            Destroy(currentAyaDigit1SVG);
+        foreach (GameObject digit in currentAyaDigitSVGs)
+        {
+            Destroy(digit);
+        }
 
-        if (currentAyaDigit2SVG != null)
-            Destroy(currentAyaDigit2SVG);
+        currentAyaDigitSVGs = new List<GameObject>();
 
-        if (currentAyaDigit3SVG != null)
-            Destroy(currentAyaDigit3SVG);
-
-        LoadDigit(ayatString[0], 1);
-
-        if (ayatString.Length > 1)
-            LoadDigit(ayatString[1], 2);
-        if (ayatString.Length > 2)
-            LoadDigit(ayatString[2], 3);
+        for (int i = ayatString.Length - 1; i >= 0; i--)
+            LoadDigit(ayatString[i]);
     }
 
-    private void LoadDigit(char digit, int position)
+    private void LoadDigit(char digit)
     {
         Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Numbers/{digit}.svg").Completed +=
         (AsyncOperationHandle<GameObject> obj) =>
         {
             if (obj.Status != AsyncOperationStatus.Succeeded)
             {
-                Debug.LogError($"Failed to load Ayat Digit {digit} at position {position}");
+                Debug.LogError($"Failed to load Ayat Digit {digit}");
                 return;
             }
 
-            // position 1 = -460
-            // position 2 = -430
-            // position 3 = -400
-            int posX = -490 + (position * 30);
+            int posX = -30 - currentLine2X;
 
             // Display Digit
             GameObject digitSVG = obj.Result;
@@ -304,7 +320,7 @@ public class DataManager : MonoBehaviour
             digitRectTransform.anchorMin = new Vector2(1, 1);
             digitRectTransform.anchorMax = new Vector2(1, 1);
             digitRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            digitRectTransform.anchoredPosition = new Vector2(posX, -45);
+            digitRectTransform.anchoredPosition = new Vector2(posX, -50);
             digitRectTransform.sizeDelta = new Vector2(30, 45);
             digitRectTransform.localScale = Vector3.one;
 
@@ -312,12 +328,10 @@ public class DataManager : MonoBehaviour
             SVGImage digitImage = digitSVG.GetComponent<SVGImage>();
             digitImage.color = Color.black;
 
-            if (position == 1)
-                currentAyaDigit1SVG = Instantiate(digitSVG, DetailsLine2.transform, false);
-            else if (position == 2)
-                currentAyaDigit2SVG = Instantiate(digitSVG, DetailsLine2.transform, false);
-            else if (position == 3)
-                currentAyaDigit3SVG = Instantiate(digitSVG, DetailsLine2.transform, false);
+            currentAyaDigitSVGs.Add(Instantiate(digitSVG, DetailsLine2.transform, false));
+
+            // Digit width is 30
+            currentLine2X += 30;
         };
     }
 
@@ -351,13 +365,16 @@ public class DataManager : MonoBehaviour
             ayatRectTransform.anchorMin = new Vector2(1, 1);
             ayatRectTransform.anchorMax = new Vector2(1, 1);
             ayatRectTransform.pivot = new Vector2(0.8f, 0.5f);
-            ayatRectTransform.anchoredPosition = new Vector2(-500, -50);
+            ayatRectTransform.anchoredPosition = new Vector2(-500, -45);
             ayatRectTransform.sizeDelta = new Vector2(100, 80);
             ayatRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
             SVGImage ayatImage = ayatSVG.GetComponent<SVGImage>();
             ayatImage.color = Color.black;
+
+            // Ayat width is 55
+            // Ayat width is 100
 
             currentAyatSVG = Instantiate(ayatSVG, DetailsLine2.transform, false);
         };
