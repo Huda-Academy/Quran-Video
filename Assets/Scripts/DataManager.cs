@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -37,8 +33,6 @@ public class DataManager : MonoBehaviour
     private List<GameObject> currentAyaDigitSVGs = new List<GameObject>();
     private GameObject currentAyatSVG = null;
     private GameObject currentQariSVG = null;
-
-    private int currentLine2X = 0;
 
     #endregion
 
@@ -254,12 +248,23 @@ public class DataManager : MonoBehaviour
         string ayatString = ayat.ToString();
 
         string ayatWord;
+        int ayatWidth;
+        int ayatMargin;
 
         // The mionimum number of Ayat in a Surah is 3
         if (ayat > 2 && ayat < 11)
+        {
             ayatWord = "Ayat";
+            ayatWidth = 100;
+            ayatMargin = 40;
+        }
         else
+        {
             ayatWord = "Aya";
+            ayatWidth = 55;
+            ayatMargin = 35;
+        }
+
 
         GameObject revelationSVG = Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{revelations[revelation]}.svg").WaitForCompletion();
         GameObject dashSVG = GameObject.Find("Dash");
@@ -280,12 +285,12 @@ public class DataManager : MonoBehaviour
 
 
         RectTransform dashRectTransform = dashSVG.GetComponent<RectTransform>();
-        dashRectTransform.anchoredPosition = new Vector2(-35 - revelationWidths[revelation], -45);
+        dashRectTransform.anchoredPosition = new Vector2(-35 - revelationWidths[revelation], -35);
 
         currentRevelationSVG = Instantiate(revelationSVG, DetailsLine2.transform, false);
 
         //Dash width is 60
-        currentX += revelationWidths[revelation] + 60;
+        currentX += revelationWidths[revelation] + 50;
 
         for (int i = ayatString.Length - 1; i >= 0; i--)
         {
@@ -297,7 +302,7 @@ public class DataManager : MonoBehaviour
             digitRectTransform.anchorMin = new Vector2(1, 1);
             digitRectTransform.anchorMax = new Vector2(1, 1);
             digitRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            digitRectTransform.anchoredPosition = new Vector2(posX, -50);
+            digitRectTransform.anchoredPosition = new Vector2(posX, -45);
             digitRectTransform.sizeDelta = new Vector2(30, 45);
             digitRectTransform.localScale = Vector3.one;
 
@@ -311,16 +316,12 @@ public class DataManager : MonoBehaviour
             currentX += 30;
         }
 
-        // TO DO adjust Ayat word X position based on currentX
-        // Update currentX basd on the width of the Ayat word
-        // Centre the placeholder based on the total width of all children
-
         RectTransform ayatRectTransform = ayatSVG.GetComponent<RectTransform>();
         ayatRectTransform.anchorMin = new Vector2(1, 1);
         ayatRectTransform.anchorMax = new Vector2(1, 1);
         ayatRectTransform.pivot = new Vector2(0.8f, 0.5f);
-        ayatRectTransform.anchoredPosition = new Vector2(-500, -45);
-        ayatRectTransform.sizeDelta = new Vector2(100, 80);
+        ayatRectTransform.anchoredPosition = new Vector2(-ayatMargin - currentX, -45);
+        ayatRectTransform.sizeDelta = new Vector2(ayatWidth, 80);
         ayatRectTransform.localScale = Vector3.one;
 
         // Change SVG Image color to black
@@ -328,6 +329,10 @@ public class DataManager : MonoBehaviour
         ayatImage.color = Color.black;
 
         currentAyatSVG = Instantiate(ayatSVG, DetailsLine2.transform, false);
+
+        int TotalWidth = currentX + ayatMargin + ayatWidth;
+
+        DetailsLine2.GetComponent<RectTransform>().sizeDelta = new Vector2(TotalWidth, 0);
     }
 
     private void LoadQari(string qariName)
@@ -366,20 +371,5 @@ public class DataManager : MonoBehaviour
             currentQariSVG = Instantiate(qariSVG, DetailsLine3.transform, false);
         };
     }
-
-    // TODO
-    // Create a line placeholder for each details line and calculate its width based on the total width of all children
-    // ... then calculate proper centre position based on its width
-
-    // Play the audio file
-    // Add audio visualisation
-    // Add timer
-
-    // Play animation when buttons pressed
-    // Front and Back panels animation
-
-    // Add progress bar??
-    // Add main sequence for cinematics
-    // Add save cinematics
 
 }
