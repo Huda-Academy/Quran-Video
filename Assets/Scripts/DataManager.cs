@@ -132,9 +132,7 @@ public class DataManager : MonoBehaviour
 
         LoadSurahTitle(currentSurah.number);
         LoadJuzz(currentSurah.juzz);
-        LoadRevelation(currentSurah.revelation);
-        LoadAyatDigits(currentSurah.ayat);
-        // LoadAyat(currentSurah.ayat);
+        LoadDetails(currentSurah.revelation, currentSurah.ayat);
         LoadQari(qaris[qariDropdown.value].name);
     }
 
@@ -212,10 +210,30 @@ public class DataManager : MonoBehaviour
         };
     }
 
-    private void LoadRevelation(int revelation)
+
+    private void LoadDetails(int revelation, int ayat)
     {
-        // Instantiate Prefab from "SVG\Revelation" folder
-        // Load the SVG file based on the revelation
+
+        // Destroy all the previous SVGs
+        if (currentRevelationSVG != null)
+        {
+            Destroy(currentRevelationSVG);
+        }
+
+        foreach (GameObject digit in currentAyaDigitSVGs)
+        {
+            Destroy(digit);
+        }
+
+        if (currentAyatSVG != null)
+        {
+            Destroy(currentAyatSVG);
+        }
+
+
+        currentAyaDigitSVGs = new List<GameObject>();
+
+        int currentX = 0;
 
         Dictionary<int, string> revelations = new Dictionary<int, string>
         {
@@ -233,89 +251,48 @@ public class DataManager : MonoBehaviour
             { 2, 110 }
         };
 
-        Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{revelations[revelation]}.svg").Completed +=
-        (AsyncOperationHandle<GameObject> obj) =>
-        {
-            if (obj.Status != AsyncOperationStatus.Succeeded)
-            {
-                Debug.LogError("Failed to load Revelation SVG");
-                return;
-            }
-
-            if (currentRevelationSVG != null)
-            {
-                Destroy(currentRevelationSVG);
-            }
-
-            // Display Revelation
-            GameObject revelationSVG = obj.Result;
-            RectTransform revelationRectTransform = revelationSVG.GetComponent<RectTransform>();
-            revelationRectTransform.anchorMin = new Vector2(1, 1);
-            revelationRectTransform.anchorMax = new Vector2(1, 1);
-            revelationRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            revelationRectTransform.anchoredPosition = new Vector2(-5 - revelationWidths[revelation] / 2, -45);
-            revelationRectTransform.sizeDelta = new Vector2(revelationWidths[revelation], 80);
-            revelationRectTransform.localScale = Vector3.one;
-
-            // Change SVG Image color to black
-            SVGImage revelationImage = revelationSVG.GetComponent<SVGImage>();
-            revelationImage.color = Color.black;
-
-            // Find object with name "Dash"
-            GameObject dashObject = GameObject.Find("Dash");
-
-            if (dashObject != null)
-            {
-                RectTransform dashRectTransform = dashObject.GetComponent<RectTransform>();
-                dashRectTransform.anchoredPosition = new Vector2(-35 - revelationWidths[revelation], -45);
-            }
-            else
-            {
-                Debug.LogError("Dash object not found");
-            }
-
-            currentRevelationSVG = Instantiate(revelationSVG, DetailsLine2.transform, false);
-
-            //Dash width is 60
-            currentLine2X += revelationWidths[revelation] + 60;
-        };
-    }
-
-    private void LoadAyatDigits(int ayat)
-    {
-        // Instantiate Prefab from "SVG\Ayat" folder
-        // Load the SVG file based on the ayat
-
         string ayatString = ayat.ToString();
 
-        // Destroy all digit objects regardless of the length of the ayat numbers
+        string ayatWord;
 
-        foreach (GameObject digit in currentAyaDigitSVGs)
-        {
-            Destroy(digit);
-        }
+        // The mionimum number of Ayat in a Surah is 3
+        if (ayat > 2 && ayat < 11)
+            ayatWord = "Ayat";
+        else
+            ayatWord = "Aya";
 
-        currentAyaDigitSVGs = new List<GameObject>();
+        GameObject revelationSVG = Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{revelations[revelation]}.svg").WaitForCompletion();
+        GameObject dashSVG = GameObject.Find("Dash");
+        GameObject ayatSVG = Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{ayatWord}.svg").WaitForCompletion();
+
+        // Display Revelation
+        RectTransform revelationRectTransform = revelationSVG.GetComponent<RectTransform>();
+        revelationRectTransform.anchorMin = new Vector2(1, 1);
+        revelationRectTransform.anchorMax = new Vector2(1, 1);
+        revelationRectTransform.pivot = new Vector2(0.5f, 0.5f);
+        revelationRectTransform.anchoredPosition = new Vector2(-5 - revelationWidths[revelation] / 2, -45);
+        revelationRectTransform.sizeDelta = new Vector2(revelationWidths[revelation], 80);
+        revelationRectTransform.localScale = Vector3.one;
+
+        // Change SVG Image color to black
+        SVGImage revelationImage = revelationSVG.GetComponent<SVGImage>();
+        revelationImage.color = Color.black;
+
+
+        RectTransform dashRectTransform = dashSVG.GetComponent<RectTransform>();
+        dashRectTransform.anchoredPosition = new Vector2(-35 - revelationWidths[revelation], -45);
+
+        currentRevelationSVG = Instantiate(revelationSVG, DetailsLine2.transform, false);
+
+        //Dash width is 60
+        currentX += revelationWidths[revelation] + 60;
 
         for (int i = ayatString.Length - 1; i >= 0; i--)
-            LoadDigit(ayatString[i]);
-    }
-
-    private void LoadDigit(char digit)
-    {
-        Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Numbers/{digit}.svg").Completed +=
-        (AsyncOperationHandle<GameObject> obj) =>
         {
-            if (obj.Status != AsyncOperationStatus.Succeeded)
-            {
-                Debug.LogError($"Failed to load Ayat Digit {digit}");
-                return;
-            }
-
-            int posX = -30 - currentLine2X;
+            GameObject digitSVG = Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Numbers/{ayatString[i]}.svg").WaitForCompletion();
+            int posX = -30 - currentX;
 
             // Display Digit
-            GameObject digitSVG = obj.Result;
             RectTransform digitRectTransform = digitSVG.GetComponent<RectTransform>();
             digitRectTransform.anchorMin = new Vector2(1, 1);
             digitRectTransform.anchorMax = new Vector2(1, 1);
@@ -331,53 +308,26 @@ public class DataManager : MonoBehaviour
             currentAyaDigitSVGs.Add(Instantiate(digitSVG, DetailsLine2.transform, false));
 
             // Digit width is 30
-            currentLine2X += 30;
-        };
-    }
+            currentX += 30;
+        }
 
-    private void LoadAyat(int ayat)
-    {
-        string ayatWord = null;
+        // TO DO adjust Ayat word X position based on currentX
+        // Update currentX basd on the width of the Ayat word
+        // Centre the placeholder based on the total width of all children
 
-        // The mionimum number of Ayat in a Surah is 3
-        if (ayat > 2 && ayat < 11)
-            ayatWord = "Ayat";
-        else
-            ayatWord = "Aya";
+        RectTransform ayatRectTransform = ayatSVG.GetComponent<RectTransform>();
+        ayatRectTransform.anchorMin = new Vector2(1, 1);
+        ayatRectTransform.anchorMax = new Vector2(1, 1);
+        ayatRectTransform.pivot = new Vector2(0.8f, 0.5f);
+        ayatRectTransform.anchoredPosition = new Vector2(-500, -45);
+        ayatRectTransform.sizeDelta = new Vector2(100, 80);
+        ayatRectTransform.localScale = Vector3.one;
 
-        Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{ayatWord}.svg").Completed +=
-        (AsyncOperationHandle<GameObject> obj) =>
-        {
-            if (obj.Status != AsyncOperationStatus.Succeeded)
-            {
-                Debug.LogError("Failed to load Ayat SVG");
-                return;
-            }
+        // Change SVG Image color to black
+        SVGImage ayatImage = ayatSVG.GetComponent<SVGImage>();
+        ayatImage.color = Color.black;
 
-            if (currentAyatSVG != null)
-            {
-                Destroy(currentAyatSVG);
-            }
-
-            // Display Ayat
-            GameObject ayatSVG = obj.Result;
-            RectTransform ayatRectTransform = ayatSVG.GetComponent<RectTransform>();
-            ayatRectTransform.anchorMin = new Vector2(1, 1);
-            ayatRectTransform.anchorMax = new Vector2(1, 1);
-            ayatRectTransform.pivot = new Vector2(0.8f, 0.5f);
-            ayatRectTransform.anchoredPosition = new Vector2(-500, -45);
-            ayatRectTransform.sizeDelta = new Vector2(100, 80);
-            ayatRectTransform.localScale = Vector3.one;
-
-            // Change SVG Image color to black
-            SVGImage ayatImage = ayatSVG.GetComponent<SVGImage>();
-            ayatImage.color = Color.black;
-
-            // Ayat width is 55
-            // Ayat width is 100
-
-            currentAyatSVG = Instantiate(ayatSVG, DetailsLine2.transform, false);
-        };
+        currentAyatSVG = Instantiate(ayatSVG, DetailsLine2.transform, false);
     }
 
     private void LoadQari(string qariName)
