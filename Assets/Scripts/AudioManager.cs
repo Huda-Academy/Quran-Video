@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Networking;
+using UnityEngine.UI;
+using System.Threading.Tasks;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
     AudioSource audioSource;
-    Coroutine getAudioClipCoroutine;
-
 
     [SerializeField]
     TMP_Dropdown surahDropdown;
@@ -17,13 +17,17 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     TMP_InputField QuranPath;
 
+    // TMP BUtton reference
+    [SerializeField]
+    TextMeshProUGUI pauseButton;
+
 
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void PlayAudio()
+    public async void PlayAudio()
     {
         int surahIndex = surahDropdown.value + 1;
         string surahIndexPadded = surahIndex.ToString().PadLeft(3, '0');
@@ -31,32 +35,50 @@ public class AudioManager : MonoBehaviour
         // Search for files that start with the surah index in the path
         string[] files = System.IO.Directory.GetFiles(QuranPath.text, surahIndexPadded + "*");
 
-        Debug.Log(surahDropdown.options[surahDropdown.value].text);
+        AudioClip audioClip = await GetAudioClip(files[0]);
 
-        getAudioClipCoroutine = StartCoroutine(GetAudioClip(files[0]));
-
-    }
-
-    IEnumerator GetAudioClip(string filePath)
-    {
         if (audioSource.isPlaying)
         {
             audioSource.Stop();
         }
 
-        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + filePath, AudioType.MPEG))
+        if (audioClip != null)
         {
-            yield return www.SendWebRequest();
-            if (www.result == UnityWebRequest.Result.ConnectionError)
-            {
-                Debug.LogError(www.error);
-            }
-            else
-            {
+            audioSource.clip = audioClip;
+            audioSource.Play();
+            pauseButton.text = "Pause";
+        }
+        else
+        {
+            Debug.LogError("Audio Clip is null");
+        }
+    }
 
-                audioSource.clip = DownloadHandlerAudioClip.GetContent(www);
-                audioSource.Play();
+    private async Task<AudioClip> GetAudioClip(string filePath)
+    {
+        try
+        {
+            using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + filePath, AudioType.MPEG))
+            {
+                // Send the request and wait for a response
+                await www.SendWebRequest();
+
+                if (www.result == UnityWebRequest.Result.ConnectionError)
+                {
+                    Debug.LogError(www.error);
+                    return null;
+                }
+                else
+                {
+                    AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+                    return clip;
+                }
             }
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError(e);
+            return null;
         }
     }
 
@@ -66,11 +88,17 @@ public class AudioManager : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Pause();
+            pauseButton.text = "Resume";
+        }
+        else
+        {
+            audioSource.UnPause();
+            pauseButton.text = "Pause";
         }
 
-        if (getAudioClipCoroutine != null)
-        {
-            StopCoroutine(getAudioClipCoroutine);
-        }
+        // if (getAudioClipCoroutine != null)
+        // {
+        //     StopCoroutine(getAudioClipCoroutine);
+        // }
     }
 }

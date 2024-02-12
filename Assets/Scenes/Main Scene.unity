@@ -4332,6 +4332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surahDropdown: {fileID: 1585313193}
   QuranPath: {fileID: 241576312}
+  pauseButton: {fileID: 1462881657}
 --- !u!1 &1170361910
 GameObject:
   m_ObjectHideFlags: 0
