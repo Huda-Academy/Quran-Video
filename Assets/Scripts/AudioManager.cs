@@ -82,6 +82,33 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    //     try
+    //         {
+    //             await Awaitable.BackgroundThreadAsync();
+    //     // Read file asynchronously
+    //     byte[] audioData = await System.IO.File.ReadAllBytesAsync(filePath);
+
+    //     float[] floatArr = new float[audioData.Length / 4];
+    //             for (int i = 0; i<floatArr.Length; i++)
+    //             {
+    //                 if (BitConverter.IsLittleEndian)
+    //                     Array.Reverse(audioData, i* 4, 4);
+    //     floatArr[i] = BitConverter.ToSingle(audioData, i* 4);
+    //             }
+
+    // AudioClip audioClip = AudioClip.Create("testSound", floatArr.Length, 1, 44100, false);
+    // audioClip.SetData(floatArr, 0);
+
+    // await Awaitable.MainThreadAsync();
+    // return null;
+
+    //         }
+    //         catch (System.Exception e)
+    //         {
+    //             Debug.LogError(e);
+    // return null;
+    //         }
+
     public void PauseAudio()
     {
 
