@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Surah Banner_0: 7272940416195331062
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
