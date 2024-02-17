@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
 {
     AudioSource audioSource;
 
+    TimerManager timerManager;
+
     [SerializeField]
     TMP_Dropdown surahDropdown;
 
@@ -23,6 +25,7 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        timerManager = GetComponent<TimerManager>();
     }
 
     public async void PlayAudio()
@@ -44,6 +47,7 @@ public class AudioManager : MonoBehaviour
         {
             audioSource.clip = audioClip;
             audioSource.Play();
+            _ = timerManager.StartTimer(audioClip.length);
             pauseButton.text = "Pause";
         }
         else
@@ -86,11 +90,13 @@ public class AudioManager : MonoBehaviour
         if (audioSource.isPlaying)
         {
             audioSource.Pause();
+            timerManager.PauseTimer(true);
             pauseButton.text = "Resume";
         }
         else
         {
             audioSource.UnPause();
+            timerManager.PauseTimer(false);
             pauseButton.text = "Pause";
         }
     }
