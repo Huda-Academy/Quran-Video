@@ -1876,8 +1876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -736.8, y: -496.8}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -725, y: -510}
+  m_SizeDelta: {x: 150, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581686185
 MonoBehaviour:
@@ -4468,6 +4468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e1b607d717598d48a9e3fc0f4cb3f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioBarsContainer: {fileID: 1930009845}
+  audioBar: {fileID: 5944318184729418750, guid: 005552341dbf7fe45b5e21b1b6aa5b99, type: 3}
   surahDropdown: {fileID: 1585313193}
   QuranPath: {fileID: 241576312}
   pauseButton: {fileID: 1462881657}
@@ -7254,7 +7256,7 @@ GameObject:
   - component: {fileID: 1930009846}
   - component: {fileID: 1930009847}
   m_Layer: 5
-  m_Name: VisualisationContainer
+  m_Name: Audio Visualisation Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7269,8 +7271,8 @@ Transform:
   m_GameObject: {fileID: 1930009845}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.139, y: -4.6354, z: -0.2}
-  m_LocalScale: {x: 1.2221, y: 0.6209383, z: 1}
+  m_LocalPosition: {x: -8, y: -4.7, z: -0.2}
+  m_LocalScale: {x: 1, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 771216615}
@@ -7319,7 +7321,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.882353, g: 0.9215687, b: 0.85098046, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
