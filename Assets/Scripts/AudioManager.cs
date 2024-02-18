@@ -26,6 +26,8 @@ public class AudioManager : MonoBehaviour
 
     float[] _samples = new float[512];
     float[] _freqBands = new float[8];
+    float[] _bandBuffer = new float[8];
+    float[] _bufferDecrease = new float[8];
 
     [SerializeField]
     TMP_Dropdown surahDropdown;
@@ -54,6 +56,7 @@ public class AudioManager : MonoBehaviour
         {
             GetSpectrumAudioSource();
             MakeFrequencyBands();
+            BandBuffer();
             UpdateAudioBars();
         }
     }
@@ -143,6 +146,24 @@ public class AudioManager : MonoBehaviour
         audioSource.GetSpectrumData(_samples, 0, FFTWindow.Blackman);
     }
 
+    private void BandBuffer()
+    {
+        for (int g = 0; g < 8; ++g)
+        {
+            if (_freqBands[g] > _bandBuffer[g])
+            {
+                _bandBuffer[g] = _freqBands[g];
+                _bufferDecrease[g] = 0.005f;
+            }
+
+            if (_freqBands[g] < _bandBuffer[g])
+            {
+                _bandBuffer[g] -= _bufferDecrease[g];
+                _bufferDecrease[g] *= 1.2f;
+            }
+        }
+    }
+
     private void MakeFrequencyBands()
     {
         int count = 0;
@@ -190,7 +211,7 @@ public class AudioManager : MonoBehaviour
     {
         for (int i = 0; i < 8; i++)
         {
-            audioBars[i].transform.localScale = new Vector3(0.12f, Mathf.Clamp(Mathf.Lerp(0.1f, 2.5f, _freqBands[i]), 0.1f, 1f), 1);
+            audioBars[i].transform.localScale = new Vector3(0.12f, Mathf.Clamp(Mathf.Lerp(0.1f, 2.5f, _bandBuffer[i]), 0.1f, 1f), 1);
         }
     }
 }
