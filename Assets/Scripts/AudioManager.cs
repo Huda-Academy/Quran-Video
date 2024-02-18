@@ -23,11 +23,12 @@ public class AudioManager : MonoBehaviour
     GameObject audioBar;
 
     GameObject[] audioBars = new GameObject[8];
+    [SerializeField]
+    float barUpdateSpeed = 1.0f;
 
     float[] _samples = new float[512];
+    [SerializeField]
     float[] _freqBands = new float[8];
-    float[] _bandBuffer = new float[8];
-    float[] _bufferDecrease = new float[8];
 
     [SerializeField]
     TMP_Dropdown surahDropdown;
@@ -56,7 +57,6 @@ public class AudioManager : MonoBehaviour
         {
             GetSpectrumAudioSource();
             MakeFrequencyBands();
-            BandBuffer();
             UpdateAudioBars();
         }
     }
@@ -146,24 +146,6 @@ public class AudioManager : MonoBehaviour
         audioSource.GetSpectrumData(_samples, 0, FFTWindow.Blackman);
     }
 
-    private void BandBuffer()
-    {
-        for (int g = 0; g < 8; ++g)
-        {
-            if (_freqBands[g] > _bandBuffer[g])
-            {
-                _bandBuffer[g] = _freqBands[g];
-                _bufferDecrease[g] = 0.005f;
-            }
-
-            if (_freqBands[g] < _bandBuffer[g])
-            {
-                _bandBuffer[g] -= _bufferDecrease[g];
-                _bufferDecrease[g] *= 1.2f;
-            }
-        }
-    }
-
     private void MakeFrequencyBands()
     {
         int count = 0;
@@ -185,7 +167,7 @@ public class AudioManager : MonoBehaviour
 
             average /= count;
 
-            _freqBands[i] = average;
+            _freqBands[i] = average * 10;
         }
     }
 
@@ -211,7 +193,8 @@ public class AudioManager : MonoBehaviour
     {
         for (int i = 0; i < 8; i++)
         {
-            audioBars[i].transform.localScale = new Vector3(0.12f, Mathf.Clamp(Mathf.Lerp(0.1f, 2.5f, _bandBuffer[i]), 0.1f, 1f), 1);
+            float new_y = Mathf.Lerp(_freqBands[i], audioBars[i].transform.localScale.y, barUpdateSpeed * Time.deltaTime);
+            audioBars[i].transform.localScale = new Vector3(0.12f, Mathf.Clamp(new_y, 0.1f, 1f), 1);
         }
     }
 }
