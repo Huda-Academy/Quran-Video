@@ -1,10 +1,12 @@
 using UnityEngine;
+using System.IO;
 using TMPro;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 using System.Linq;
 using System.Runtime.ExceptionServices;
 using System;
+using System.Threading;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
@@ -13,6 +15,7 @@ public class AudioManager : MonoBehaviour
 
     TimerManager timerManager;
     Task timerTask;
+    CancellationTokenSource tokenSource;
 
     [SerializeField]
     GameObject audioBarsContainer;
@@ -61,21 +64,28 @@ public class AudioManager : MonoBehaviour
         string surahIndexPadded = surahIndex.ToString().PadLeft(3, '0');
 
         // Search for files that start with the surah index in the path
-        string audioFile = System.IO.Directory.GetFiles(QuranPath.text, surahIndexPadded + "*").FirstOrDefault();
+        string audioFile = Directory.GetFiles(QuranPath.text, surahIndexPadded + "*").FirstOrDefault();
 
         AudioClip audioClip = await GetAudioClip(audioFile);
 
-        if (audioSource.isPlaying)
+        audioSource.Stop();
+
+        // Cancel the timerTask if it's already running
+        if (timerTask != null && !timerTask.IsCompleted)
         {
-            audioSource.Stop();
+            tokenSource.Cancel();
+            await timerTask;
         }
+
+        tokenSource = new CancellationTokenSource();
 
         if (audioClip != null)
         {
             audioSource.clip = audioClip;
             audioSource.Play();
-            timerTask = timerManager.StartTimer(audioClip.length);
             pauseButton.text = "Pause";
+            timerTask = timerManager.StartTimer(audioClip.length, tokenSource.Token);
+            await timerTask;
         }
         else
         {

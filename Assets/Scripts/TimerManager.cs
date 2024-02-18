@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
@@ -47,17 +48,28 @@ public class TimerManager : MonoBehaviour
         }
     }
 
-    public async Task StartTimer(float time)
+    public async Task StartTimer(float time, CancellationToken token)
     {
         _time = time;
         SetTime(_time);
         _isPaused = false;
 
-        while (_time > 0)
+        while (_time > 0 && !token.IsCancellationRequested)
         {
-            await Awaitable.WaitForSecondsAsync(1);
+            try
+            {
+                await Awaitable.WaitForSecondsAsync(1, token);
+            }
+            catch (OperationCanceledException)
+            {
+                break;
+            }
+
             if (_isPaused)
+            {
                 continue;
+            }
+
             _time--;
             SetTime(_time);
         }
