@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Hosary_0: 4497824067161628040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

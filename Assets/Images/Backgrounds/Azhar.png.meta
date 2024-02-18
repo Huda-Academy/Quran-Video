@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Azhar_0: 462315612178395620
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
