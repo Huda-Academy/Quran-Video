@@ -4470,6 +4470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioBarsContainer: {fileID: 1930009845}
   audioBar: {fileID: 5944318184729418750, guid: 005552341dbf7fe45b5e21b1b6aa5b99, type: 3}
+  barUpdateSpeed: 50
   surahDropdown: {fileID: 1585313193}
   QuranPath: {fileID: 241576312}
   pauseButton: {fileID: 1462881657}

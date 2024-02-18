@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
 
     GameObject[] audioBars = new GameObject[8];
     [SerializeField]
-    float barUpdateSpeed = 33.0f;
+    float barUpdateSpeed = 50.0f;
 
     float[] _samples = new float[512];
     float[] _freqBands = new float[8];
@@ -142,7 +142,16 @@ public class AudioManager : MonoBehaviour
 
     private void GetSpectrumAudioSource()
     {
-        audioSource.GetSpectrumData(_samples, 0, FFTWindow.Blackman);
+        float[] _samplesLeft = new float[512];
+        float[] _samplesRight = new float[512];
+
+        audioSource.GetSpectrumData(_samplesLeft, 0, FFTWindow.Blackman);
+        audioSource.GetSpectrumData(_samplesRight, 1, FFTWindow.Blackman);
+
+        for (int i = 0; i < 512; i++)
+        {
+            _samples[i] = (_samplesLeft[i] + _samplesRight[i]) / 2;
+        }
     }
 
     private void MakeFrequencyBands()
