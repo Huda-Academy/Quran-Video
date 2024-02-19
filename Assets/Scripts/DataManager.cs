@@ -268,6 +268,7 @@ public class DataManager : MonoBehaviour
 
         GameObject revelationSVG = Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{revelations[revelation]}.svg").WaitForCompletion();
         GameObject dashSVG = GameObject.Find("Dash");
+        dashSVG.GetComponent<SVGImage>().enabled = true;
         GameObject ayatSVG = Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{ayatWord}.svg").WaitForCompletion();
 
         // Display Revelation
