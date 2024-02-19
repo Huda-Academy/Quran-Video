@@ -10,13 +10,16 @@ public class CinematicsManager : MonoBehaviour
 {
     [SerializeField] PlayableDirector director;
     RecorderController recorderController;
+    AudioManager audioManager;
 
-
+    private void Awake()
+    {
+        audioManager = GetComponent<AudioManager>();
+    }
 
     public void PlayCinematic(string cinematicName)
     {
         // Play the cinematic
-        Debug.Log("Playing cinematic: " + cinematicName);
         director.Play();
     }
 
@@ -25,12 +28,10 @@ public class CinematicsManager : MonoBehaviour
         if (recorderController != null && recorderController.IsRecording())
         {
             recorderController.StopRecording();
-            Debug.Log("Recording stopped");
             return;
         }
 
         // Record the cinematic
-        Debug.Log("Recording cinematic");
 
         MovieRecorderSettings videoRecorderSettings = ScriptableObject.CreateInstance<MovieRecorderSettings>();
         RecorderControllerSettings controllerSettings = ScriptableObject.CreateInstance<RecorderControllerSettings>();
@@ -40,22 +41,22 @@ public class CinematicsManager : MonoBehaviour
 
         videoRecorderSettings.CapFrameRate = false;
         videoRecorderSettings.FrameRate = 60.0f;
+
         videoRecorderSettings.ImageInputSettings = new GameViewInputSettings
         {
             OutputWidth = 1920,
             OutputHeight = 1080
         };
+
         videoRecorderSettings.AudioInputSettings.PreserveAudio = true;
 
-
-
         // Set output file path
-        videoRecorderSettings.OutputFile = "D:\\Temp\\MyVideo";
+        videoRecorderSettings.OutputFile = "D:\\Temp\\Testing";
 
-        RecorderOptions.VerboseMode = true;
+        RecorderOptions.VerboseMode = false;
 
         controllerSettings.AddRecorderSettings(videoRecorderSettings);
-        controllerSettings.SetRecordModeToTimeInterval(0, 10);
+        controllerSettings.SetRecordModeToTimeInterval(0, audioManager.ClipLength);
         controllerSettings.FrameRate = 60.0f;
 
         recorderController = new RecorderController(controllerSettings);
