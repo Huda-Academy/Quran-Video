@@ -155,8 +155,8 @@ public class DataManager : MonoBehaviour
             surahRectTransform.anchorMin = new Vector2(1, 1);
             surahRectTransform.anchorMax = new Vector2(1, 1);
             surahRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            surahRectTransform.anchoredPosition = new Vector2(-225, -55);
-            surahRectTransform.sizeDelta = new Vector2(350, 80);
+            surahRectTransform.anchoredPosition = new Vector2(-240, -50);
+            surahRectTransform.sizeDelta = new Vector2(480, 90);
             surahRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
@@ -192,8 +192,8 @@ public class DataManager : MonoBehaviour
             juzzRectTransform.anchorMin = new Vector2(1, 1);
             juzzRectTransform.anchorMax = new Vector2(1, 1);
             juzzRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            juzzRectTransform.anchoredPosition = new Vector2(-364, -45);
-            juzzRectTransform.sizeDelta = new Vector2(728, 80);
+            juzzRectTransform.anchoredPosition = new Vector2(-375, -45);
+            juzzRectTransform.sizeDelta = new Vector2(750, 90);
             juzzRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
@@ -241,8 +241,8 @@ public class DataManager : MonoBehaviour
 
         Dictionary<int, int> revelationWidths = new Dictionary<int, int>
         {
-            { 1, 100 },
-            { 2, 110 }
+            { 1, 120 },
+            { 2, 130 }
         };
 
         string ayatString = ayat.ToString();
@@ -255,14 +255,14 @@ public class DataManager : MonoBehaviour
         if (ayat > 2 && ayat < 11)
         {
             ayatWord = "Ayat";
-            ayatWidth = 100;
-            ayatMargin = 40;
+            ayatWidth = 120;
+            ayatMargin = 10;
         }
         else
         {
             ayatWord = "Aya";
-            ayatWidth = 55;
-            ayatMargin = 35;
+            ayatWidth = 65;
+            ayatMargin = 5;
         }
 
 
@@ -276,8 +276,8 @@ public class DataManager : MonoBehaviour
         revelationRectTransform.anchorMin = new Vector2(1, 1);
         revelationRectTransform.anchorMax = new Vector2(1, 1);
         revelationRectTransform.pivot = new Vector2(0.5f, 0.5f);
-        revelationRectTransform.anchoredPosition = new Vector2(-5 - revelationWidths[revelation] / 2, -45);
-        revelationRectTransform.sizeDelta = new Vector2(revelationWidths[revelation], 80);
+        revelationRectTransform.anchoredPosition = new Vector2(-5 - revelationWidths[revelation] / 2, -47);
+        revelationRectTransform.sizeDelta = new Vector2(revelationWidths[revelation], 95);
         revelationRectTransform.localScale = Vector3.one;
 
         // Change SVG Image color to black
@@ -286,12 +286,12 @@ public class DataManager : MonoBehaviour
 
 
         RectTransform dashRectTransform = dashSVG.GetComponent<RectTransform>();
-        dashRectTransform.anchoredPosition = new Vector2(-35 - revelationWidths[revelation], -35);
+        dashRectTransform.anchoredPosition = new Vector2(-35 - revelationWidths[revelation], -45);
 
         currentRevelationSVG = Instantiate(revelationSVG, DetailsLine2.transform, false);
 
         //Dash width is 60
-        currentX += revelationWidths[revelation] + 50;
+        currentX += revelationWidths[revelation] + 60;
 
         for (int i = ayatString.Length - 1; i >= 0; i--)
         {
@@ -303,8 +303,8 @@ public class DataManager : MonoBehaviour
             digitRectTransform.anchorMin = new Vector2(1, 1);
             digitRectTransform.anchorMax = new Vector2(1, 1);
             digitRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            digitRectTransform.anchoredPosition = new Vector2(posX, -45);
-            digitRectTransform.sizeDelta = new Vector2(30, 45);
+            digitRectTransform.anchoredPosition = new Vector2(posX, -50);
+            digitRectTransform.sizeDelta = new Vector2(40, 50);
             digitRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
@@ -321,8 +321,8 @@ public class DataManager : MonoBehaviour
         ayatRectTransform.anchorMin = new Vector2(1, 1);
         ayatRectTransform.anchorMax = new Vector2(1, 1);
         ayatRectTransform.pivot = new Vector2(0.8f, 0.5f);
-        ayatRectTransform.anchoredPosition = new Vector2(-ayatMargin - currentX, -45);
-        ayatRectTransform.sizeDelta = new Vector2(ayatWidth, 80);
+        ayatRectTransform.anchoredPosition = new Vector2(-30 - ayatMargin - currentX, -47);
+        ayatRectTransform.sizeDelta = new Vector2(ayatWidth, 90);
         ayatRectTransform.localScale = Vector3.one;
 
         // Change SVG Image color to black
@@ -331,7 +331,7 @@ public class DataManager : MonoBehaviour
 
         currentAyatSVG = Instantiate(ayatSVG, DetailsLine2.transform, false);
 
-        int TotalWidth = currentX + ayatMargin + ayatWidth;
+        int TotalWidth = revelationWidths[revelation] + 60 + (ayatString.Length * 40) + ayatWidth;
 
         DetailsLine2.GetComponent<RectTransform>().sizeDelta = new Vector2(TotalWidth, 0);
     }
@@ -361,8 +361,8 @@ public class DataManager : MonoBehaviour
             qariRectTransform.anchorMin = new Vector2(1f, 1f);
             qariRectTransform.anchorMax = new Vector2(1f, 1f);
             qariRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            qariRectTransform.anchoredPosition = new Vector2(-364, -45);
-            qariRectTransform.sizeDelta = new Vector2(728, 80);
+            qariRectTransform.anchoredPosition = new Vector2(-375, -50);
+            qariRectTransform.sizeDelta = new Vector2(750, 90);
             qariRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
