@@ -358,10 +358,10 @@ public class DataManager : MonoBehaviour
             // Display Qari
             GameObject qariSVG = obj.Result;
             RectTransform qariRectTransform = qariSVG.GetComponent<RectTransform>();
-            qariRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-            qariRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            qariRectTransform.anchorMin = new Vector2(1f, 1f);
+            qariRectTransform.anchorMax = new Vector2(1f, 1f);
             qariRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            qariRectTransform.anchoredPosition = new Vector2(0, 0);
+            qariRectTransform.anchoredPosition = new Vector2(-364, -45);
             qariRectTransform.sizeDelta = new Vector2(728, 80);
             qariRectTransform.localScale = Vector3.one;
 
