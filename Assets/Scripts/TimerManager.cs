@@ -30,7 +30,7 @@ public class TimerManager : MonoBehaviour
         _isPaused = isPaused;
     }
 
-    private void SetTime(float time)
+    public void SetTime(float time)
     {
         _time = time;
 
@@ -48,6 +48,7 @@ public class TimerManager : MonoBehaviour
         }
     }
 
+    [Obsolete]
     public async Task StartTimer(float time, CancellationToken token)
     {
         _time = time;

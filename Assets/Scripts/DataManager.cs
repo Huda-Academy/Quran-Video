@@ -28,11 +28,19 @@ public class DataManager : MonoBehaviour
     Qari currentQari = null;
 
     private GameObject currentSurahTitleSVG = null;
+    private GameObject currentSurahTitleSVGShadow = null;
+
     private GameObject currentJuzzSVG = null;
+    private GameObject currentJuzzSVGShadow = null;
+
     private GameObject currentRevelationSVG = null;
+    private GameObject currentRevelationSVGShadow = null;
+
     private List<GameObject> currentAyaDigitSVGs = new List<GameObject>();
     private GameObject currentAyatSVG = null;
+    private GameObject currentAyatSVGShadow = null;
     private GameObject currentQariSVG = null;
+    private GameObject currentQariSVGShadow = null;
 
     #endregion
 
@@ -147,6 +155,7 @@ public class DataManager : MonoBehaviour
             if (currentSurahTitleSVG != null)
             {
                 Destroy(currentSurahTitleSVG);
+                Destroy(currentSurahTitleSVGShadow);
             }
 
             // Display Surah Title
@@ -155,8 +164,8 @@ public class DataManager : MonoBehaviour
             surahRectTransform.anchorMin = new Vector2(1, 1);
             surahRectTransform.anchorMax = new Vector2(1, 1);
             surahRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            surahRectTransform.anchoredPosition = new Vector2(-225, -55);
-            surahRectTransform.sizeDelta = new Vector2(350, 80);
+            surahRectTransform.anchoredPosition = new Vector2(-240, -50);
+            surahRectTransform.sizeDelta = new Vector2(480, 90);
             surahRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
@@ -164,6 +173,21 @@ public class DataManager : MonoBehaviour
             surahImage.color = Color.black;
 
             currentSurahTitleSVG = Instantiate(surahTitleSVG, surahTitle.transform, false);
+
+            //Display same SVG x+2, y+2 with alpha = 0.5 as drop shadow
+            RectTransform surahShadowRectTransform = surahTitleSVG.GetComponent<RectTransform>();
+            surahShadowRectTransform.anchorMin = new Vector2(1, 1);
+            surahShadowRectTransform.anchorMax = new Vector2(1, 1);
+            surahShadowRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            surahShadowRectTransform.anchoredPosition = new Vector2(-238.5f, -51.5f);
+            surahShadowRectTransform.sizeDelta = new Vector2(480, 90);
+            surahShadowRectTransform.localScale = Vector3.one;
+
+            // Change SVG Image color to black with Alpha = 0.5
+            SVGImage surahShadowImage = surahTitleSVG.GetComponent<SVGImage>();
+            surahShadowImage.color = new Color(0, 0, 0, 0.5f);
+
+            currentSurahTitleSVGShadow = Instantiate(surahTitleSVG, surahTitle.transform, false);
         };
     }
 
@@ -184,6 +208,7 @@ public class DataManager : MonoBehaviour
             if (currentJuzzSVG != null)
             {
                 Destroy(currentJuzzSVG);
+                Destroy(currentJuzzSVGShadow);
             }
 
             // Display Juzz
@@ -192,8 +217,8 @@ public class DataManager : MonoBehaviour
             juzzRectTransform.anchorMin = new Vector2(1, 1);
             juzzRectTransform.anchorMax = new Vector2(1, 1);
             juzzRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            juzzRectTransform.anchoredPosition = new Vector2(-364, -45);
-            juzzRectTransform.sizeDelta = new Vector2(728, 80);
+            juzzRectTransform.anchoredPosition = new Vector2(-375, -45);
+            juzzRectTransform.sizeDelta = new Vector2(750, 90);
             juzzRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
@@ -201,9 +226,23 @@ public class DataManager : MonoBehaviour
             juzzImage.color = Color.black;
 
             currentJuzzSVG = Instantiate(juzzSVG, DetailsLine1.transform, false);
+
+            // Display same SVG x+1.5, y+1.5 with alpha = 0.5 as drop shadow
+            RectTransform juzzShadowRectTransform = juzzSVG.GetComponent<RectTransform>();
+            juzzShadowRectTransform.anchorMin = new Vector2(1, 1);
+            juzzShadowRectTransform.anchorMax = new Vector2(1, 1);
+            juzzShadowRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            juzzShadowRectTransform.anchoredPosition = new Vector2(-373.5f, -46.5f);
+            juzzShadowRectTransform.sizeDelta = new Vector2(750, 90);
+            juzzShadowRectTransform.localScale = Vector3.one;
+
+            // Change SVG Image color to black with Alpha = 0.5
+            SVGImage juzzShadowImage = juzzSVG.GetComponent<SVGImage>();
+            juzzShadowImage.color = new Color(0, 0, 0, 0.5f);
+
+            currentJuzzSVGShadow = Instantiate(juzzSVG, DetailsLine1.transform, false);
         };
     }
-
 
     private void LoadDetails(int revelation, int ayat)
     {
@@ -212,6 +251,7 @@ public class DataManager : MonoBehaviour
         if (currentRevelationSVG != null)
         {
             Destroy(currentRevelationSVG);
+            Destroy(currentRevelationSVGShadow);
         }
 
         foreach (GameObject digit in currentAyaDigitSVGs)
@@ -222,6 +262,7 @@ public class DataManager : MonoBehaviour
         if (currentAyatSVG != null)
         {
             Destroy(currentAyatSVG);
+            Destroy(currentAyatSVGShadow);
         }
 
 
@@ -241,8 +282,8 @@ public class DataManager : MonoBehaviour
 
         Dictionary<int, int> revelationWidths = new Dictionary<int, int>
         {
-            { 1, 100 },
-            { 2, 110 }
+            { 1, 120 },
+            { 2, 130 }
         };
 
         string ayatString = ayat.ToString();
@@ -255,42 +296,59 @@ public class DataManager : MonoBehaviour
         if (ayat > 2 && ayat < 11)
         {
             ayatWord = "Ayat";
-            ayatWidth = 100;
-            ayatMargin = 40;
+            ayatWidth = 120;
+            ayatMargin = 10;
         }
         else
         {
             ayatWord = "Aya";
-            ayatWidth = 55;
-            ayatMargin = 35;
+            ayatWidth = 65;
+            ayatMargin = 5;
         }
 
 
         GameObject revelationSVG = Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{revelations[revelation]}.svg").WaitForCompletion();
-        GameObject dashSVG = GameObject.Find("Dash");
         GameObject ayatSVG = Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Words/{ayatWord}.svg").WaitForCompletion();
+
+        // Dash already exists and no need to keep instantiating it. Just show it
+        GameObject dashSVG = GameObject.Find("Dash");
+        dashSVG.GetComponent<SVGImage>().enabled = true;
+
+        RectTransform dashRectTransform = dashSVG.GetComponent<RectTransform>();
+        dashRectTransform.anchoredPosition = new Vector2(-35 - revelationWidths[revelation], -45);
 
         // Display Revelation
         RectTransform revelationRectTransform = revelationSVG.GetComponent<RectTransform>();
         revelationRectTransform.anchorMin = new Vector2(1, 1);
         revelationRectTransform.anchorMax = new Vector2(1, 1);
         revelationRectTransform.pivot = new Vector2(0.5f, 0.5f);
-        revelationRectTransform.anchoredPosition = new Vector2(-5 - revelationWidths[revelation] / 2, -45);
-        revelationRectTransform.sizeDelta = new Vector2(revelationWidths[revelation], 80);
+        revelationRectTransform.anchoredPosition = new Vector2(-5 - revelationWidths[revelation] / 2, -47);
+        revelationRectTransform.sizeDelta = new Vector2(revelationWidths[revelation], 95);
         revelationRectTransform.localScale = Vector3.one;
 
         // Change SVG Image color to black
         SVGImage revelationImage = revelationSVG.GetComponent<SVGImage>();
         revelationImage.color = Color.black;
 
-
-        RectTransform dashRectTransform = dashSVG.GetComponent<RectTransform>();
-        dashRectTransform.anchoredPosition = new Vector2(-35 - revelationWidths[revelation], -35);
-
         currentRevelationSVG = Instantiate(revelationSVG, DetailsLine2.transform, false);
 
+        // Show the shadow of the SVG
+        RectTransform revelationShadowRectTransform = revelationSVG.GetComponent<RectTransform>();
+        revelationShadowRectTransform.anchorMin = new Vector2(1, 1);
+        revelationShadowRectTransform.anchorMax = new Vector2(1, 1);
+        revelationShadowRectTransform.pivot = new Vector2(0.5f, 0.5f);
+        revelationShadowRectTransform.anchoredPosition = new Vector2(-3.5f - revelationWidths[revelation] / 2, -48.5f);
+        revelationShadowRectTransform.sizeDelta = new Vector2(revelationWidths[revelation], 95);
+        revelationShadowRectTransform.localScale = Vector3.one;
+
+        // Change SVG Image color to black with Alpha = 0.5
+        SVGImage revelationShadowImage = revelationSVG.GetComponent<SVGImage>();
+        revelationShadowImage.color = new Color(0, 0, 0, 0.5f);
+
+        currentRevelationSVGShadow = Instantiate(revelationSVG, DetailsLine2.transform, false);
+
         //Dash width is 60
-        currentX += revelationWidths[revelation] + 50;
+        currentX += revelationWidths[revelation] + 60;
 
         for (int i = ayatString.Length - 1; i >= 0; i--)
         {
@@ -302,13 +360,28 @@ public class DataManager : MonoBehaviour
             digitRectTransform.anchorMin = new Vector2(1, 1);
             digitRectTransform.anchorMax = new Vector2(1, 1);
             digitRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            digitRectTransform.anchoredPosition = new Vector2(posX, -45);
-            digitRectTransform.sizeDelta = new Vector2(30, 45);
+            digitRectTransform.anchoredPosition = new Vector2(posX, -50);
+            digitRectTransform.sizeDelta = new Vector2(40, 50);
             digitRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
             SVGImage digitImage = digitSVG.GetComponent<SVGImage>();
             digitImage.color = Color.black;
+
+            currentAyaDigitSVGs.Add(Instantiate(digitSVG, DetailsLine2.transform, false));
+
+            // Show the shadow of the SVG
+            RectTransform digitShadowRectTransform = digitSVG.GetComponent<RectTransform>();
+            digitShadowRectTransform.anchorMin = new Vector2(1, 1);
+            digitShadowRectTransform.anchorMax = new Vector2(1, 1);
+            digitShadowRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            digitShadowRectTransform.anchoredPosition = new Vector2(posX + 2, -52);
+            digitShadowRectTransform.sizeDelta = new Vector2(40, 50);
+            digitShadowRectTransform.localScale = Vector3.one;
+
+            // Change SVG Image color to black with Alpha = 0.5
+            SVGImage digitShadowImage = digitSVG.GetComponent<SVGImage>();
+            digitShadowImage.color = new Color(0, 0, 0, 0.5f);
 
             currentAyaDigitSVGs.Add(Instantiate(digitSVG, DetailsLine2.transform, false));
 
@@ -320,8 +393,8 @@ public class DataManager : MonoBehaviour
         ayatRectTransform.anchorMin = new Vector2(1, 1);
         ayatRectTransform.anchorMax = new Vector2(1, 1);
         ayatRectTransform.pivot = new Vector2(0.8f, 0.5f);
-        ayatRectTransform.anchoredPosition = new Vector2(-ayatMargin - currentX, -45);
-        ayatRectTransform.sizeDelta = new Vector2(ayatWidth, 80);
+        ayatRectTransform.anchoredPosition = new Vector2(-30 - ayatMargin - currentX, -47);
+        ayatRectTransform.sizeDelta = new Vector2(ayatWidth, 90);
         ayatRectTransform.localScale = Vector3.one;
 
         // Change SVG Image color to black
@@ -330,7 +403,22 @@ public class DataManager : MonoBehaviour
 
         currentAyatSVG = Instantiate(ayatSVG, DetailsLine2.transform, false);
 
-        int TotalWidth = currentX + ayatMargin + ayatWidth;
+        // Show the shadow of the SVG
+        RectTransform ayatShadowRectTransform = ayatSVG.GetComponent<RectTransform>();
+        ayatShadowRectTransform.anchorMin = new Vector2(1, 1);
+        ayatShadowRectTransform.anchorMax = new Vector2(1, 1);
+        ayatShadowRectTransform.pivot = new Vector2(0.8f, 0.5f);
+        ayatShadowRectTransform.anchoredPosition = new Vector2(-28.5f - ayatMargin - currentX, -48.5f);
+        ayatShadowRectTransform.sizeDelta = new Vector2(ayatWidth, 90);
+        ayatShadowRectTransform.localScale = Vector3.one;
+
+        // Change SVG Image color to black with Alpha = 0.5
+        SVGImage ayatShadowImage = ayatSVG.GetComponent<SVGImage>();
+        ayatShadowImage.color = new Color(0, 0, 0, 0.5f);
+
+        currentAyatSVGShadow = Instantiate(ayatSVG, DetailsLine2.transform, false);
+
+        int TotalWidth = revelationWidths[revelation] + 60 + (ayatString.Length * 40) + ayatWidth;
 
         DetailsLine2.GetComponent<RectTransform>().sizeDelta = new Vector2(TotalWidth, 0);
     }
@@ -357,11 +445,11 @@ public class DataManager : MonoBehaviour
             // Display Qari
             GameObject qariSVG = obj.Result;
             RectTransform qariRectTransform = qariSVG.GetComponent<RectTransform>();
-            qariRectTransform.anchorMin = new Vector2(0.5f, 0.5f);
-            qariRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+            qariRectTransform.anchorMin = new Vector2(1f, 1f);
+            qariRectTransform.anchorMax = new Vector2(1f, 1f);
             qariRectTransform.pivot = new Vector2(0.5f, 0.5f);
-            qariRectTransform.anchoredPosition = new Vector2(0, 0);
-            qariRectTransform.sizeDelta = new Vector2(728, 80);
+            qariRectTransform.anchoredPosition = new Vector2(-375, -50);
+            qariRectTransform.sizeDelta = new Vector2(750, 90);
             qariRectTransform.localScale = Vector3.one;
 
             // Change SVG Image color to black
@@ -369,6 +457,21 @@ public class DataManager : MonoBehaviour
             qariImage.color = Color.black;
 
             currentQariSVG = Instantiate(qariSVG, DetailsLine3.transform, false);
+
+            // Display same SVG x+1.5, y+1.5 with alpha = 0.5 as drop shadow
+            RectTransform qariShadowRectTransform = qariSVG.GetComponent<RectTransform>();
+            qariShadowRectTransform.anchorMin = new Vector2(1f, 1f);
+            qariShadowRectTransform.anchorMax = new Vector2(1f, 1f);
+            qariShadowRectTransform.pivot = new Vector2(0.5f, 0.5f);
+            qariShadowRectTransform.anchoredPosition = new Vector2(-373.5f, -51.5f);
+            qariShadowRectTransform.sizeDelta = new Vector2(750, 90);
+            qariShadowRectTransform.localScale = Vector3.one;
+
+            // Change SVG Image color to black with Alpha = 0.5
+            SVGImage qariShadowImage = qariSVG.GetComponent<SVGImage>();
+            qariShadowImage.color = new Color(0, 0, 0, 0.5f);
+
+            currentQariSVGShadow = Instantiate(qariSVG, DetailsLine3.transform, false);
         };
     }
 

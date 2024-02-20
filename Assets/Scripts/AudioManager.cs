@@ -7,15 +7,18 @@ using System.Linq;
 using System.Runtime.ExceptionServices;
 using System;
 using System.Threading;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
     AudioSource audioSource;
 
+    public float ClipLength => audioSource.clip.length;
+
     TimerManager timerManager;
-    Task timerTask;
-    CancellationTokenSource tokenSource;
+    // Task timerTask;
+    // CancellationTokenSource tokenSource;
 
     [SerializeField]
     GameObject audioBarsContainer;
@@ -39,6 +42,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI pauseButton;
 
+    [SerializeField]
+    Slider progressBar;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -48,6 +54,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         DisplayAudioBars();
+        UpdateProgress(0);
     }
 
     private void Update()
@@ -57,10 +64,21 @@ public class AudioManager : MonoBehaviour
             GetSpectrumAudioSource();
             MakeFrequencyBands();
             UpdateAudioBars();
+            UpdateProgress(audioSource.time / audioSource.clip.length);
         }
     }
 
     public async void PlayAudio()
+    {
+        audioSource.Stop();
+
+        await LoadAudioFile();
+
+        audioSource.Play();
+        pauseButton.text = "Pause";
+    }
+
+    public async Task LoadAudioFile()
     {
         int surahIndex = surahDropdown.value + 1;
         string surahIndexPadded = surahIndex.ToString().PadLeft(3, '0');
@@ -68,31 +86,7 @@ public class AudioManager : MonoBehaviour
         // Search for files that start with the surah index in the path
         string audioFile = Directory.GetFiles(QuranPath.text, surahIndexPadded + "*").FirstOrDefault();
 
-        AudioClip audioClip = await GetAudioClip(audioFile);
-
-        audioSource.Stop();
-
-        // Cancel the timerTask if it's already running
-        if (timerTask != null && !timerTask.IsCompleted)
-        {
-            tokenSource.Cancel();
-            await timerTask;
-        }
-
-        tokenSource = new CancellationTokenSource();
-
-        if (audioClip != null)
-        {
-            audioSource.clip = audioClip;
-            audioSource.Play();
-            pauseButton.text = "Pause";
-            timerTask = timerManager.StartTimer(audioClip.length, tokenSource.Token);
-            await timerTask;
-        }
-        else
-        {
-            Debug.LogError("Audio Clip is null");
-        }
+        audioSource.clip = await GetAudioClip(audioFile);
     }
 
     private async Task<AudioClip> GetAudioClip(string filePath)
@@ -203,6 +197,21 @@ public class AudioManager : MonoBehaviour
         {
             float new_y = Mathf.Lerp(_freqBands[i], audioBars[i].transform.localScale.y, barUpdateSpeed * Time.deltaTime);
             audioBars[i].transform.localScale = new Vector3(0.12f, Mathf.Clamp(new_y, 0.1f, 1f), 1);
+        }
+    }
+
+    private void UpdateProgress(float progress)
+    {
+        // Set the progress bar value
+        progressBar.value = progress;
+    }
+
+    public void SeekAudio()
+    {
+        if (audioSource.clip != null)
+        {
+            audioSource.time = progressBar.value * audioSource.clip.length;
+            timerManager.SetTime(audioSource.clip.length - audioSource.time);
         }
     }
 }
