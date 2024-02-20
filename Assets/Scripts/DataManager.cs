@@ -244,7 +244,6 @@ public class DataManager : MonoBehaviour
         };
     }
 
-
     private void LoadDetails(int revelation, int ayat)
     {
 

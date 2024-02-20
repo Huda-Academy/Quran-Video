@@ -70,37 +70,23 @@ public class AudioManager : MonoBehaviour
 
     public async void PlayAudio()
     {
+        audioSource.Stop();
+
+        await LoadAudioFile();
+
+        audioSource.Play();
+        pauseButton.text = "Pause";
+    }
+
+    public async Task LoadAudioFile()
+    {
         int surahIndex = surahDropdown.value + 1;
         string surahIndexPadded = surahIndex.ToString().PadLeft(3, '0');
 
         // Search for files that start with the surah index in the path
         string audioFile = Directory.GetFiles(QuranPath.text, surahIndexPadded + "*").FirstOrDefault();
 
-        AudioClip audioClip = await GetAudioClip(audioFile);
-
-        audioSource.Stop();
-
-        // Cancel the timerTask if it's already running
-        // if (timerTask != null && !timerTask.IsCompleted)
-        // {
-        //     tokenSource.Cancel();
-        //     await timerTask;
-        // }
-
-        // tokenSource = new CancellationTokenSource();
-
-        if (audioClip != null)
-        {
-            audioSource.clip = audioClip;
-            audioSource.Play();
-            pauseButton.text = "Pause";
-            //timerTask = timerManager.StartTimer(audioClip.length, tokenSource.Token);
-            //await timerTask;
-        }
-        else
-        {
-            Debug.LogError("Audio Clip is null");
-        }
+        audioSource.clip = await GetAudioClip(audioFile);
     }
 
     private async Task<AudioClip> GetAudioClip(string filePath)
