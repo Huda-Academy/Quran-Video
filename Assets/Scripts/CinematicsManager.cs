@@ -4,6 +4,7 @@ using UnityEditor.Recorder;
 using UnityEditor.Recorder.Input;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.InputSystem;
 
 public class CinematicsManager : MonoBehaviour
 {
@@ -93,4 +94,15 @@ public class CinematicsManager : MonoBehaviour
         controlPanel.SetActive(true);
     }
 
+    public void StopRecording(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        if (recorderController != null && recorderController.IsRecording())
+        {
+            recorderController.StopRecording();
+            audioManager.PauseAudio();
+        }
+    }
 }

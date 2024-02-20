@@ -1,0 +1,34 @@
+{
+    "name": "Main Input Controls",
+    "maps": [
+        {
+            "name": "Main Map",
+            "id": "39c26475-a1cb-4c9d-960b-5952ae66981d",
+            "actions": [
+                {
+                    "name": "StopRecoding",
+                    "type": "Button",
+                    "id": "d0550de9-e0e5-4bca-a044-f174e2f4295e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ce3f6d72-d24b-41ec-8e72-c1a22840e71c",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopRecoding",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
