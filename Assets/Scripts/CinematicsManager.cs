@@ -5,6 +5,7 @@ using UnityEditor.Recorder.Input;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.InputSystem;
+using System.Threading.Tasks;
 
 public class CinematicsManager : MonoBehaviour
 {
@@ -15,10 +16,12 @@ public class CinematicsManager : MonoBehaviour
 
     RecorderController recorderController;
     AudioManager audioManager;
+    DataManager dataManager;
 
     private void Awake()
     {
         audioManager = GetComponent<AudioManager>();
+        dataManager = GetComponent<DataManager>();
     }
 
     public void PlayCinematic()
@@ -27,7 +30,37 @@ public class CinematicsManager : MonoBehaviour
         director.Play();
     }
 
-    public async void RecordQuranClip()
+    public async void RecordClip()
+    {
+        await RecordQuranClip();
+    }
+
+    public void StopRecording(InputAction.CallbackContext context)
+    {
+        if (!context.performed)
+            return;
+
+        if (recorderController != null && recorderController.IsRecording())
+        {
+            recorderController.StopRecording();
+            audioManager.PauseAudio();
+        }
+    }
+
+    public async void Export()
+    {
+        while (true)
+        {
+            await RecordQuranClip();
+            if (surahDropdown.value == surahDropdown.options.Count - 1) // Last Surah
+            {
+                break;
+            }
+            dataManager.LoadNextSurah();
+        }
+    }
+
+    private async Task RecordQuranClip()
     {
         if (recorderController != null && recorderController.IsRecording())
         {
@@ -50,8 +83,8 @@ public class CinematicsManager : MonoBehaviour
 
         videoRecorderSettings.ImageInputSettings = new GameViewInputSettings
         {
-            OutputWidth = 1920,
-            OutputHeight = 1080
+            OutputWidth = 3840,
+            OutputHeight = 2160
         };
 
         videoRecorderSettings.AudioInputSettings.PreserveAudio = true;
@@ -94,15 +127,4 @@ public class CinematicsManager : MonoBehaviour
         controlPanel.SetActive(true);
     }
 
-    public void StopRecording(InputAction.CallbackContext context)
-    {
-        if (!context.performed)
-            return;
-
-        if (recorderController != null && recorderController.IsRecording())
-        {
-            recorderController.StopRecording();
-            audioManager.PauseAudio();
-        }
-    }
 }
