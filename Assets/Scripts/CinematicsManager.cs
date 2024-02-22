@@ -83,8 +83,14 @@ public class CinematicsManager : MonoBehaviour
 
         videoRecorderSettings.ImageInputSettings = new GameViewInputSettings
         {
-            OutputWidth = 3840,
-            OutputHeight = 2160
+            // 4K Resolution
+            // OutputWidth = 3840,
+            // OutputHeight = 2160
+
+            // 1080p Resolution
+            OutputWidth = 1920,
+            OutputHeight = 1080
+
         };
 
         videoRecorderSettings.AudioInputSettings.PreserveAudio = true;
