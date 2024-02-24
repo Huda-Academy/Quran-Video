@@ -12,7 +12,8 @@ public class DataManager : MonoBehaviour
     [Header("UI Elements")]
     [SerializeField] private TMP_Dropdown surahDropdown;
     [SerializeField] private TMP_Dropdown qariDropdown;
-    [SerializeField] private TMP_InputField surahsPath;
+    [SerializeField] private TMP_InputField inputPath;
+    [SerializeField] private TMP_InputField outputPath;
 
     [Header("Placeholders")]
     [SerializeField] private GameObject surahTitle;
@@ -45,6 +46,8 @@ public class DataManager : MonoBehaviour
     private GameObject currentAyatSVGShadow = null;
     private GameObject currentQariSVG = null;
     private GameObject currentQariSVGShadow = null;
+
+    private string basePath = @"D:\Quran";
 
     #endregion
 
@@ -82,7 +85,7 @@ public class DataManager : MonoBehaviour
 
     public void LoadSurahFiles()
     {
-        string path = surahsPath.text;
+        string path = inputPath.text;
 
         if (string.IsNullOrEmpty(path))
         {
@@ -491,6 +494,9 @@ public class DataManager : MonoBehaviour
         {
             qariPortrait.GetComponent<SpriteRenderer>().sprite = obj.Result;
         };
+
+        inputPath.text = $"{basePath}\\{currentQari.fullName}";
+        outputPath.text = $"{basePath}\\{currentQari.fullName}\\Video";
 
     }
 

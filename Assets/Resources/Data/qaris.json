@@ -16,8 +16,22 @@
         },
         {
             "id": "3",
-            "fullName": "Mohammad Siddiq Al-Minshawi",
+            "fullName": "Mohammad Seddiq Almenshawy (Murattal)",
             "name": "Minshawy (Murattal)",
+            "portrait": "Minshawy",
+            "mosque": "Azhar"
+        },
+        {
+            "id": "4",
+            "fullName": "Mohammad Seddiq Almenshawy (Mujawwad)",
+            "name": "Minshawy (Mujawwad)",
+            "portrait": "Minshawy",
+            "mosque": "Azhar"
+        },
+        {
+            "id": "5",
+            "fullName": "Mohammad Seddiq Almenshawy (Muallem)",
+            "name": "Minshawy (Muallem)",
             "portrait": "Minshawy",
             "mosque": "Azhar"
         }

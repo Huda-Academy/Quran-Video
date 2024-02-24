@@ -6009,7 +6009,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   surahDropdown: {fileID: 1585313193}
   qariDropdown: {fileID: 1474538086}
-  surahsPath: {fileID: 241576312}
+  inputPath: {fileID: 241576312}
+  outputPath: {fileID: 1709330352}
   surahTitle: {fileID: 921195562}
   DetailsLine1: {fileID: 979994026}
   DetailsLine2: {fileID: 1692515596}
@@ -10150,7 +10151,7 @@ Transform:
   m_GameObject: {fileID: 1980881722}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.6829424, y: -2.2119088, z: 0}
+  m_LocalPosition: {x: 6.765, y: -1.946, z: 0}
   m_LocalScale: {x: 0.5704, y: 0.5704, z: 0.5704}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10199,15 +10200,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 4845185344462464369, guid: bab6cc26475661a48a54cae659c1b83f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.26, y: 10.64}
+  m_Size: {x: 10.06, y: 10.24}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!1 &1985098317

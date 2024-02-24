@@ -3,7 +3,7 @@ guid: bab6cc26475661a48a54cae659c1b83f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4497824067161628040
+      213: 4845185344462464369
     second: Husary_0
   externalObjects: {}
   serializedVersion: 13
@@ -155,10 +155,10 @@ TextureImporter:
       name: Husary_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 18
         y: 0
-        width: 1026
-        height: 1064
+        width: 1006
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,26 +166,25 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88d1f59982b7b6e30800000000000000
-      internalID: 4497824067161628040
+      spriteID: 1752d9f566e8d3340800000000000000
+      internalID: 4845185344462464369
       vertices: []
-      indices:
+      indices: 
       edges: []
       weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID:
+    spriteID: 
     internalID: 0
     vertices: []
-    indices:
+    indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Husary_0: 4497824067161628040
-  mipmapLimitGroupName:
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  userData:
-  assetBundleName:
-  assetBundleVariant:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
