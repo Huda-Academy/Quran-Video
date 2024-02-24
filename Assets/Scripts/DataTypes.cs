@@ -18,4 +18,6 @@ public class Qari
     public int id;
     public string fullName;
     public string name;
+    public string portrait;
+    public string mosque;
 }

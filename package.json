@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Huda-Academy/Quran-Video.git"
+        "url": "git+https://github.com/hekma-org/Quran-Video.git"
     },
     "keywords": [
         "Quran"
@@ -19,9 +19,9 @@
     "author": "Nader Elshehabi",
     "license": "GPL-3.0-or-later",
     "bugs": {
-        "url": "https://github.com/Huda-Academy/Quran-Video/issues"
+        "url": "https://github.com/hekma-org/Quran-Video/issues"
     },
-    "homepage": "https://github.com/Huda-Academy/Quran-Video#readme",
+    "homepage": "https://github.com/hekma-org/Quran-Video#readme",
     "devDependencies": {
         "@commitlint/cli": "^18.4.3",
         "@commitlint/config-conventional": "^18.4.3",

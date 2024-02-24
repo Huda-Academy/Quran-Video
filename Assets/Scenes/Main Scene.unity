@@ -1038,7 +1038,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!224 &118602719 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+  m_CorrespondingSourceObject: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
   m_PrefabInstance: {fileID: 227848493}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &143309382
@@ -1351,91 +1351,107 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1450043665}
     m_Modifications:
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_AnchorMin.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_AnchorMin.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_SizeDelta.x
       value: 750
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_SizeDelta.y
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -375
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -50
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8524424544509167813, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -8524424544509167813, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5567868813287497981, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
-      propertyPath: m_Name
-      value: Husary
+    - target: {fileID: -2304375700400688866, guid: f8ab48b5618de7e448312ec882485299, type: 3}
+      propertyPath: m_Color.a
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5567868813287497981, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+    - target: {fileID: -2304375700400688866, guid: f8ab48b5618de7e448312ec882485299, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2304375700400688866, guid: f8ab48b5618de7e448312ec882485299, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2304375700400688866, guid: f8ab48b5618de7e448312ec882485299, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567868813287497981, guid: f8ab48b5618de7e448312ec882485299, type: 3}
+      propertyPath: m_Name
+      value: Husary (Murattal)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5567868813287497981, guid: f8ab48b5618de7e448312ec882485299, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -1443,7 +1459,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 7243324766535440047, guid: b1d5861322f3f254eab9e4479a987beb, type: 3}
+  m_SourcePrefab: {fileID: 7243324766535440047, guid: f8ab48b5618de7e448312ec882485299, type: 3}
 --- !u!1 &241576310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,7 +1585,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: D:\Quran\Mahmoud Khalil Al-Hosary
+  m_Text: D:\Quran\Mahmoud Khalil Alhusary (Murattal)
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -3979,7 +3995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D:\\Quran\\Mahmoud Khalil Al-Hosary\u200B"
+  m_text: "D:\\Quran\\Mahmoud Khalil Alhusary (Murattal)\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5998,6 +6014,7 @@ MonoBehaviour:
   DetailsLine1: {fileID: 979994026}
   DetailsLine2: {fileID: 1692515596}
   DetailsLine3: {fileID: 1450043664}
+  qariPortrait: {fileID: 1980881722}
 --- !u!82 &1158710661
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7318,7 +7335,19 @@ MonoBehaviour:
     m_Options: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1158710660}
+        m_TargetAssemblyTypeName: DataManager, DataAssembly
+        m_MethodName: LoadQari
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &1474538087
 MonoBehaviour:
@@ -8662,7 +8691,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: D:\Quran\Mahmoud Khalil Al-Hosary\Video
+  m_Text: D:\Quran\Mahmoud Khalil Alhusary (Murattal)\Video
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -10106,7 +10135,7 @@ GameObject:
   - component: {fileID: 1980881723}
   - component: {fileID: 1980881724}
   m_Layer: 0
-  m_Name: Hosary
+  m_Name: Qari
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10170,7 +10199,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4497824067161628040, guid: bab6cc26475661a48a54cae659c1b83f, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10178,7 +10207,7 @@ SpriteRenderer:
   m_Size: {x: 10.26, y: 10.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!1 &1985098317
@@ -10456,7 +10485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D:\\Quran\\Mahmoud Khalil Al-Hosary\\Video\u200B"
+  m_text: "D:\\Quran\\Mahmoud Khalil Alhusary (Murattal)\\Video\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

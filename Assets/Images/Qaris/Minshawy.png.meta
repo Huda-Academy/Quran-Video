@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bab6cc26475661a48a54cae659c1b83f
+guid: 96363580a3321fa40b5944844c2eea49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4497824067161628040
-    second: Hosary_0
+      213: -4960418377257909549
+    second: Minshawy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hosary_0
+      name: Minshawy_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1026
-        height: 1064
+        width: 474
+        height: 474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88d1f59982b7b6e30800000000000000
-      internalID: 4497824067161628040
+      spriteID: 3d2093e64cd092bb0800000000000000
+      internalID: -4960418377257909549
       vertices: []
       indices: 
       edges: []
@@ -182,8 +182,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Hosary_0: 4497824067161628040
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

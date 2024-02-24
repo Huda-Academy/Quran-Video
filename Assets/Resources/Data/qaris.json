@@ -2,13 +2,24 @@
     "items": [
         {
             "id": "1",
-            "fullName": "Mahmood Khalil Al-Husary",
-            "name": "Husary"
+            "fullName": "Mahmood Khalil Al-Husary (Murattal)",
+            "name": "Husary (Murattal)",
+            "portrait": "Husary",
+            "mosque": "Azhar"
         },
         {
             "id": "2",
+            "fullName": "Mahmood Khalil Al-Husary (Mujawwad)",
+            "name": "Husary (Mujawwad)",
+            "portrait": "Husary",
+            "mosque": "Azhar"
+        },
+        {
+            "id": "3",
             "fullName": "Mohammad Siddiq Al-Minshawi",
-            "name": "Minshawi"
+            "name": "Minshawy (Murattal)",
+            "portrait": "Minshawy",
+            "mosque": "Azhar"
         }
     ]
 }

@@ -20,12 +20,16 @@ public class DataManager : MonoBehaviour
     [SerializeField] private GameObject DetailsLine2;
     [SerializeField] private GameObject DetailsLine3;
 
+    [Header("Qari Portrait")]
+    [SerializeField] private GameObject qariPortrait;
+
     #region Private Fields
     Surah[] surahs = null;
     Qari[] qaris = null;
 
     Surah currentSurah = null;
     Qari currentQari = null;
+
 
     private GameObject currentSurahTitleSVG = null;
     private GameObject currentSurahTitleSVGShadow = null;
@@ -73,6 +77,7 @@ public class DataManager : MonoBehaviour
         }
 
         LoadSurahDetails();
+        LoadQari();
     }
 
     public void LoadSurahFiles()
@@ -135,7 +140,6 @@ public class DataManager : MonoBehaviour
         LoadSurahTitle(currentSurah.number);
         LoadJuzz(currentSurah.juzz);
         LoadDetails(currentSurah.revelation, currentSurah.ayat);
-        LoadQari(qaris[qariDropdown.value].name);
     }
 
     private void LoadSurahTitle(int surahNumber)
@@ -423,12 +427,18 @@ public class DataManager : MonoBehaviour
         DetailsLine2.GetComponent<RectTransform>().sizeDelta = new Vector2(TotalWidth, 0);
     }
 
-    private void LoadQari(string qariName)
+    public void LoadQari()
+    {
+        currentQari = qaris[qariDropdown.value];
+        LoadQariDetails();
+    }
+
+    private void LoadQariDetails()
     {
         // Instantiate Prefab from "SVG\Qari" folder
         // Load the SVG file based on the qariId
 
-        Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Qaris/{qariName}.svg").Completed +=
+        Addressables.LoadAssetAsync<GameObject>($"Assets/SVG/Qaris/{currentQari.name}.svg").Completed +=
         (AsyncOperationHandle<GameObject> obj) =>
         {
             if (obj.Status != AsyncOperationStatus.Succeeded)
@@ -440,6 +450,7 @@ public class DataManager : MonoBehaviour
             if (currentQariSVG != null)
             {
                 Destroy(currentQariSVG);
+                Destroy(currentQariSVGShadow);
             }
 
             // Display Qari
@@ -473,6 +484,14 @@ public class DataManager : MonoBehaviour
 
             currentQariSVGShadow = Instantiate(qariSVG, DetailsLine3.transform, false);
         };
+
+        //Load Qair's Portrait
+        Addressables.LoadAssetAsync<Sprite>($"Assets/Images/Qaris/{currentQari.portrait}.png").Completed +=
+        (AsyncOperationHandle<Sprite> obj) =>
+        {
+            qariPortrait.GetComponent<SpriteRenderer>().sprite = obj.Result;
+        };
+
     }
 
 }
