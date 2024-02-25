@@ -4,10 +4,8 @@ using TMPro;
 using UnityEngine.Networking;
 using System.Threading.Tasks;
 using System.Linq;
-using System.Runtime.ExceptionServices;
-using System;
-using System.Threading;
 using UnityEngine.UI;
+using NAudio.Wave;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
@@ -27,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
     GameObject[] audioBars = new GameObject[8];
     [SerializeField]
-    float barUpdateSpeed = 50.0f;
+    float barUpdateSpeed = 120.0f;
 
     float[] _samples = new float[512];
     float[] _freqBands = new float[8];
@@ -93,22 +91,27 @@ public class AudioManager : MonoBehaviour
     {
         try
         {
-            using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + filePath, AudioType.MPEG))
-            {
-                // Send the request and wait for a response
-                await www.SendWebRequest();
+            // Read file bytes asynchronously
+            byte[] data = await File.ReadAllBytesAsync(filePath);
+            AudioClip clip = NAudioPlayer.FromMp3Data(data);
+            return clip;
+            // using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + filePath, AudioType.MPEG))
+            // {
+            //     // Send the request and wait for a response
+            //     await www.SendWebRequest();
 
-                if (www.result == UnityWebRequest.Result.ConnectionError)
-                {
-                    Debug.LogError(www.error);
-                    return null;
-                }
-                else
-                {
-                    AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
-                    return clip;
-                }
-            }
+            //     if (www.result == UnityWebRequest.Result.ConnectionError)
+            //     {
+            //         Debug.LogError(www.error);
+            //         return null;
+            //     }
+            //     else
+            //     {
+            //         // AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+
+            //         return clip;
+            //     }
+            // }
         }
         catch (System.Exception e)
         {
