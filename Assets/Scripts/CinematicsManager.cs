@@ -87,9 +87,13 @@ public class CinematicsManager : MonoBehaviour
             // OutputWidth = 3840,
             // OutputHeight = 2160
 
+            // 2K Resolution
+            OutputWidth = 2560,
+            OutputHeight = 1440
+
             // 1080p Resolution
-            OutputWidth = 1920,
-            OutputHeight = 1080
+            // OutputWidth = 1920,
+            // OutputHeight = 1080
 
         };
 
