@@ -25,7 +25,7 @@ public class AudioManager : MonoBehaviour
 
     GameObject[] audioBars = new GameObject[8];
     [SerializeField]
-    float barUpdateSpeed = 120.0f;
+    float barUpdateSpeed = 110.0f;
 
     float[] _samples = new float[512];
     float[] _freqBands = new float[8];
