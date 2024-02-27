@@ -66,6 +66,16 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void Reset(){
+        progressBar.value = 0;
+
+        //set audio bars to 0
+        for (int i = 0; i < 8; i++)
+        {
+            audioBars[i].transform.localScale = new Vector3(0.12f, 0.1f, 1);
+        }
+    }
+
     public async void PlayAudio()
     {
         audioSource.Stop();

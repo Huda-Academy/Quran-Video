@@ -121,6 +121,10 @@ public class CinematicsManager : MonoBehaviour
         recorderController.PrepareRecording();
         recorderController.StartRecording();
 
+        // Prepare scene
+        audioManager.Reset();
+
+
         // Play animations
         director.Play();
 
