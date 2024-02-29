@@ -1,18 +1,16 @@
 using UnityEngine;
 using System.IO;
 using TMPro;
-using UnityEngine.Networking;
 using System.Threading.Tasks;
 using System.Linq;
 using UnityEngine.UI;
-using NAudio.Wave;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
     AudioSource audioSource;
 
-    public float ClipLength => audioSource.clip.length;
+    public float ClipLength => audioSource.clip.length / 2;
 
     TimerManager timerManager;
     // Task timerTask;
@@ -25,7 +23,7 @@ public class AudioManager : MonoBehaviour
 
     GameObject[] audioBars = new GameObject[8];
     [SerializeField]
-    float barUpdateSpeed = 110.0f;
+    public float barUpdateSpeed = 110.0f;
 
     float[] _samples = new float[512];
     float[] _freqBands = new float[8];
@@ -42,6 +40,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     Slider progressBar;
+
+    private bool autoUpdate = false;
 
     private void Awake()
     {
@@ -62,11 +62,12 @@ public class AudioManager : MonoBehaviour
             GetSpectrumAudioSource();
             MakeFrequencyBands();
             UpdateAudioBars();
-            UpdateProgress(audioSource.time / audioSource.clip.length);
+            UpdateProgress(audioSource.time / (audioSource.clip.length / 2));
         }
     }
 
-    public void Reset(){
+    public void Reset()
+    {
         progressBar.value = 0;
 
         //set audio bars to 0
@@ -82,6 +83,7 @@ public class AudioManager : MonoBehaviour
 
         await LoadAudioFile();
 
+        Debug.Log(audioSource.clip.length);
         audioSource.Play();
         pauseButton.text = "Pause";
     }
@@ -215,6 +217,7 @@ public class AudioManager : MonoBehaviour
 
     private void UpdateProgress(float progress)
     {
+        autoUpdate = true;
         // Set the progress bar value
         progressBar.value = progress;
     }
@@ -223,8 +226,10 @@ public class AudioManager : MonoBehaviour
     {
         if (audioSource.clip != null)
         {
-            audioSource.time = progressBar.value * audioSource.clip.length;
-            timerManager.SetTime(audioSource.clip.length - audioSource.time);
+            if (!autoUpdate)
+                audioSource.time = progressBar.value * (audioSource.clip.length / 2);
+            autoUpdate = false;
+            timerManager.SetTime(Mathf.Max((audioSource.clip.length / 2) - audioSource.time, 0.0f));
         }
     }
 }

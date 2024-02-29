@@ -71,6 +71,7 @@ public class CinematicsManager : MonoBehaviour
         //Prepare Audio
         await audioManager.LoadAudioFile();
         audioManager.SeekAudio();
+        audioManager.barUpdateSpeed = 23.0f;
 
 
         // Prepare settings
@@ -79,7 +80,7 @@ public class CinematicsManager : MonoBehaviour
 
         videoRecorderSettings.Enabled = true;
         videoRecorderSettings.CapFrameRate = false;
-        videoRecorderSettings.FrameRate = 60.0f;
+        videoRecorderSettings.FrameRate = 30.0f;
 
         videoRecorderSettings.ImageInputSettings = new GameViewInputSettings
         {
@@ -112,7 +113,7 @@ public class CinematicsManager : MonoBehaviour
 
         controllerSettings.AddRecorderSettings(videoRecorderSettings);
         controllerSettings.SetRecordModeToTimeInterval(0, audioManager.ClipLength + 1.5f);
-        controllerSettings.FrameRate = 60.0f;
+        controllerSettings.FrameRate = 30.0f;
 
         // Hide Control panel. Record stopping should be with HotKey
         controlPanel.SetActive(false);
