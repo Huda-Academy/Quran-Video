@@ -71,7 +71,7 @@ public class CinematicsManager : MonoBehaviour
         //Prepare Audio
         await audioManager.LoadAudioFile();
         audioManager.SeekAudio();
-        audioManager.barUpdateSpeed = 23.0f;
+        audioManager.barUpdateSpeed = 23.0f; // Adjusted bar update speed for recording
 
 
         // Prepare settings

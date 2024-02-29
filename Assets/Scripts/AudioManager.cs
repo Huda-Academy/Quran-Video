@@ -4,13 +4,17 @@ using TMPro;
 using System.Threading.Tasks;
 using System.Linq;
 using UnityEngine.UI;
+using NAudio.Wave;
+using System;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
     AudioSource audioSource;
 
-    public float ClipLength => audioSource.clip.length / 2;
+    private float trueClipLength;
+    public float ClipLength => trueClipLength;
 
     TimerManager timerManager;
     // Task timerTask;
@@ -62,7 +66,7 @@ public class AudioManager : MonoBehaviour
             GetSpectrumAudioSource();
             MakeFrequencyBands();
             UpdateAudioBars();
-            UpdateProgress(audioSource.time / (audioSource.clip.length / 2));
+            UpdateProgress(audioSource.time / trueClipLength);
         }
     }
 
@@ -83,7 +87,6 @@ public class AudioManager : MonoBehaviour
 
         await LoadAudioFile();
 
-        Debug.Log(audioSource.clip.length);
         audioSource.Play();
         pauseButton.text = "Pause";
     }
@@ -104,26 +107,25 @@ public class AudioManager : MonoBehaviour
         try
         {
             // Read file bytes asynchronously
-            byte[] data = await File.ReadAllBytesAsync(filePath);
-            AudioClip clip = NAudioPlayer.FromMp3Data(data);
-            return clip;
-            // using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + filePath, AudioType.MPEG))
-            // {
-            //     // Send the request and wait for a response
-            //     await www.SendWebRequest();
+            using (var reader = new Mp3FileReader(filePath))
+                trueClipLength = (float)reader.TotalTime.TotalSeconds;
 
-            //     if (www.result == UnityWebRequest.Result.ConnectionError)
-            //     {
-            //         Debug.LogError(www.error);
-            //         return null;
-            //     }
-            //     else
-            //     {
-            //         // AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+            using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip("file://" + filePath, AudioType.MPEG))
+            {
+                // Send the request and wait for a response
+                await www.SendWebRequest();
 
-            //         return clip;
-            //     }
-            // }
+                if (www.result == UnityWebRequest.Result.ConnectionError)
+                {
+                    Debug.LogError(www.error);
+                    return null;
+                }
+                else
+                {
+                    AudioClip clip = DownloadHandlerAudioClip.GetContent(www);
+                    return clip;
+                }
+            }
         }
         catch (System.Exception e)
         {
@@ -227,9 +229,9 @@ public class AudioManager : MonoBehaviour
         if (audioSource.clip != null)
         {
             if (!autoUpdate)
-                audioSource.time = progressBar.value * (audioSource.clip.length / 2);
+                audioSource.time = progressBar.value * trueClipLength;
             autoUpdate = false;
-            timerManager.SetTime(Mathf.Max((audioSource.clip.length / 2) - audioSource.time, 0.0f));
+            timerManager.SetTime(Mathf.Max(trueClipLength - audioSource.time, 0.0f));
         }
     }
 }

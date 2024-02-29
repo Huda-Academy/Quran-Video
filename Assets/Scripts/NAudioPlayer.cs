@@ -3,6 +3,7 @@ using System.IO;
 using NAudio.Wave;
 using UnityEngine;
 
+[Obsolete("Use AudioManager instead")]
 public static class NAudioPlayer
 {
     public static AudioClip FromMp3Data(byte[] data)
