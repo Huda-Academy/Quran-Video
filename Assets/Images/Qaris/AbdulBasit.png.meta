@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -510435118099405471
-    second: AbulBaset_0
+    second: AbdulBaset_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,7 +152,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AbulBaset_0
+      name: AbdulBaset_0
       rect:
         serializedVersion: 2
         x: 0
@@ -169,23 +169,23 @@ TextureImporter:
       spriteID: 165ecc8e6f19ae8f0800000000000000
       internalID: -510435118099405471
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID:
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      AbulBaset_0: -510435118099405471
-  mipmapLimitGroupName: 
+      AbdulBaset_0: -510435118099405471
+  mipmapLimitGroupName:
   pSDRemoveMatte: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:
