@@ -34,6 +34,20 @@
             "name": "Minshawy (Muallem)",
             "portrait": "Minshawy",
             "mosque": "Azhar"
+        },
+        {
+            "id": "6",
+            "fullName": "AbdulBasit AbdulSamad (Murattal)",
+            "name": "AbdulBasit (Murattal)",
+            "portrait": "AbdulBasit",
+            "mosque": "Shafie"
+        },
+        {
+            "id": "7",
+            "fullName": "AbdulBasit AbdulSamad (Mujawwad)",
+            "name": "AbdulBasit (Mujawwad)",
+            "portrait": "AbdulBasit",
+            "mosque": "Shafie"
         }
     ]
 }

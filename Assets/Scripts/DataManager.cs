@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Unity.VectorGraphics;
+using System;
 
 
 public class DataManager : MonoBehaviour
@@ -434,6 +435,7 @@ public class DataManager : MonoBehaviour
     {
         currentQari = qaris[qariDropdown.value];
         LoadQariDetails();
+        LoadMosque();
     }
 
     private void LoadQariDetails()
@@ -498,6 +500,18 @@ public class DataManager : MonoBehaviour
         inputPath.text = $"{basePath}\\{currentQari.fullName}";
         outputPath.text = $"{basePath}\\{currentQari.fullName}\\Video";
 
+    }
+
+    private void LoadMosque()
+    {
+        // Disable all GameObjects with tag "Mosque"
+        GameObject[] mosques = GameObject.FindGameObjectsWithTag("Mosque");
+
+        // Enable the GameObject with the name of the currentQari.mosque
+        foreach (GameObject mosque in mosques)
+        {
+            mosque.GetComponent<SpriteRenderer>().enabled = mosque.name == currentQari.mosque;
+        }
     }
 
 }
