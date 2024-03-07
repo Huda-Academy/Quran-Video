@@ -48,6 +48,20 @@
             "name": "AbdulBasit (Mujawwad)",
             "portrait": "AbdulBasit",
             "mosque": "Azhar2"
+        },
+        {
+            "id": "8",
+            "fullName": "Mahmoud Ali AlBanna (Murattal)",
+            "name": "AlBanna (Murattal)",
+            "portrait": "Banna",
+            "mosque": "Azhar3"
+        },
+        {
+            "id": "9",
+            "fullName": "Mahmoud Ali AlBanna (Mujawwad)",
+            "name": "AlBanna (Mujawwad)",
+            "portrait": "Banna",
+            "mosque": "Azhar3"
         }
     ]
 }

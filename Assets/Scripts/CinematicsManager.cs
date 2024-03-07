@@ -71,7 +71,7 @@ public class CinematicsManager : MonoBehaviour
         //Prepare Audio
         await audioManager.LoadAudioFile();
         audioManager.SeekAudio();
-        audioManager.barUpdateSpeed = 23.0f; // Adjusted bar update speed for recording
+        audioManager.barUpdateSpeed = 25.0f; // Adjusted bar update speed for recording
 
 
         // Prepare settings
@@ -99,6 +99,7 @@ public class CinematicsManager : MonoBehaviour
         };
 
         videoRecorderSettings.AudioInputSettings.PreserveAudio = true;
+        videoRecorderSettings.CapFrameRate = false;
 
         // Set output file path
         videoRecorderSettings.OutputFile = Path.Combine(QuranOutputPath.text, surahDropdown.options[surahDropdown.value].text);
