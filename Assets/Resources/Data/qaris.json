@@ -62,6 +62,27 @@
             "name": "AlBanna (Mujawwad)",
             "portrait": "Banna",
             "mosque": "Azhar3"
+        },
+        {
+            "id": "10",
+            "fullName": "Mustafa Ismail (Murattal)",
+            "name": "Mustafa Ismail (Murattal)",
+            "portrait": "Mustafa Ismail",
+            "mosque": "MohammadAli"
+        },
+        {
+            "id": "11",
+            "fullName": "Mustafa Ismail (Mujawwad)",
+            "name": "Mustafa Ismail (Mujawwad)",
+            "portrait": "Mustafa Ismail",
+            "mosque": "MohammadAli"
+        },
+        {
+            "id": "12",
+            "fullName": "Saud Alshuraim",
+            "name": "Alshuraim",
+            "portrait": "Alshuraim",
+            "mosque": "Haram"
         }
     ]
 }
