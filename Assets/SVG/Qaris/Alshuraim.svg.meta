@@ -39,16 +39,16 @@ ScriptedImporter:
   spriteData:
     TessellationDetail: 0
     SpriteRect:
-      name: 
+      name: AlshuraimSprite
       originalName: 
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5000135, y: 0.4960307}
       alignment: 0
       border: {x: 0, y: 0, z: 0, w: 0}
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 0
-        height: 0
+        width: 395
+        height: 59
       spriteID: 9c61cc8a4d120b5408aadd22c0cf7b27
     PhysicsOutlines: []

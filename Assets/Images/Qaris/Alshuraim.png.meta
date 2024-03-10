@@ -158,12 +158,12 @@ TextureImporter:
       name: Alshuraim_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 53
         y: 0
-        width: 61
-        height: 155
+        width: 971
+        height: 1024
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -184,7 +184,7 @@ TextureImporter:
         width: 972
         height: 1024
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -199,14 +199,16 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 6f2865388946df14eac0f1cf1f9d0ad6
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Alshuraim_0: -4216153624803238319
+      Alshuraim_1: -6692279363020687472
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
