@@ -83,6 +83,41 @@
             "name": "Alshuraim",
             "portrait": "Alshuraim",
             "mosque": "Haram"
+        },
+        {
+            "id": "13",
+            "fullName": "Abdulrahman Alsudaes",
+            "name": "Alsudais",
+            "portrait": "Alsudais",
+            "mosque": "Kaaba"
+        },
+        {
+            "id": "14",
+            "fullName": "Mohammad Jebriel",
+            "name": "Jebriel",
+            "portrait": "Jebriel",
+            "mosque": "AmrIbnAlaas"
+        },
+        {
+            "id": "15",
+            "fullName": "Ahmad Alajmy",
+            "name": "Alajmy",
+            "portrait": "Alajmy",
+            "mosque": "Nabawi2"
+        },
+        {
+            "id": "16",
+            "fullName": "AbdulRasheed Soufi",
+            "name": "Soufi",
+            "portrait": "Soufi",
+            "mosque": "Tadamun"
+        },
+        {
+            "id": "17",
+            "fullName": "Mohammad Mahmoud Al-Tablawi",
+            "name": "Tablawi",
+            "portrait": "Tablawi",
+            "mosque": "MohammadAli2"
         }
     ]
 }
