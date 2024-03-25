@@ -118,6 +118,13 @@
             "name": "Tablawi",
             "portrait": "Tablawi",
             "mosque": "MohammadAli2"
+        },
+        {
+            "id": "18",
+            "fullName": "Saad Alghamdy",
+            "name": "Alghamdy",
+            "portrait": "Alghamdy",
+            "mosque": "Nabawi4"
         }
     ]
 }
